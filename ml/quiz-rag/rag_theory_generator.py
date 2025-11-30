@@ -1,23 +1,21 @@
 """
-RAG Quiz Generator for MCQ questions
+RAG Theory Generator for theory/explanation questions
 """
 import os
-from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.chains import RetrievalQA
-from langchain.prompts import PromptTemplate
 import json
 from pathlib import Path
 
 
-class RAGQuizGenerator:
-    def __init__(self, data_dir: str, collection_name: str = "mcq_questions"):
+class RAGTheoryGenerator:
+    def __init__(self, data_dir: str, collection_name: str = "theory_questions"):
         """
-        Initialize RAG Quiz Generator
+        Initialize RAG Theory Generator
         
         Args:
-            data_dir: Directory containing MCQ JSON files
+            data_dir: Directory containing theory JSON files
             collection_name: Name for ChromaDB collection
         """
         self.data_dir = Path(data_dir)
@@ -39,7 +37,7 @@ class RAGQuizGenerator:
         self.retriever = None
         
     def load_and_index_data(self):
-        """Load MCQ data from JSON files and create vector store"""
+        """Load theory data from JSON files and create vector store"""
         documents = []
         
         # Load all JSON files from data directory
@@ -52,20 +50,24 @@ class RAGQuizGenerator:
                     questions = data if isinstance(data, list) else data.get('questions', [])
                     
                     for item in questions:
-                        # Create document text from question
+                        # Create document text from theory content
                         doc_text = f"Question: {item.get('question', '')}\n"
                         doc_text += f"Subject: {item.get('subject', '')}\n"
                         doc_text += f"Topic: {item.get('topic', '')}\n"
-                        doc_text += f"Difficulty: {item.get('difficulty', '')}\n"
-                        doc_text += f"Options: {json.dumps(item.get('options', []))}\n"
-                        doc_text += f"Answer: {item.get('correct_answer', '')}\n"
+                        doc_text += f"Type: Theory/Explanation\n"
+                        
+                        # Add answer/explanation if available
+                        if 'answer' in item:
+                            doc_text += f"Answer: {item.get('answer', '')}\n"
+                        if 'explanation' in item:
+                            doc_text += f"Explanation: {item.get('explanation', '')}\n"
                         
                         documents.append(doc_text)
             except Exception as e:
                 print(f"Error loading {json_file}: {e}")
         
         if not documents:
-            print("No documents loaded!")
+            print("No theory documents loaded!")
             return
         
         # Split documents
@@ -87,20 +89,19 @@ class RAGQuizGenerator:
             search_kwargs={"k": 5}
         )
         
-        print(f"Indexed {len(documents)} MCQ questions")
+        print(f"Indexed {len(documents)} theory questions")
     
-    def retrieve_context(self, subject: str, topic: str = None, difficulty: str = None, k: int = 5):
+    def retrieve_context(self, subject: str, topic: str = None, k: int = 5):
         """
-        Retrieve relevant MCQ context
+        Retrieve relevant theory context
         
         Args:
             subject: Subject name
             topic: Optional topic filter
-            difficulty: Optional difficulty filter
             k: Number of results to retrieve
             
         Returns:
-            List of relevant question contexts
+            List of relevant theory contexts
         """
         if not self.retriever:
             self.load_and_index_data()
@@ -109,8 +110,7 @@ class RAGQuizGenerator:
         query = f"Subject: {subject}"
         if topic:
             query += f" Topic: {topic}"
-        if difficulty:
-            query += f" Difficulty: {difficulty}"
+        query += " Type: Theory"
         
         # Retrieve documents
         docs = self.retriever.get_relevant_documents(query)

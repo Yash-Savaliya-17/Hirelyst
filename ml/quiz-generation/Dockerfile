@@ -2,20 +2,16 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Copy only requirements first (for better caching)
+# Copy requirements first for better caching
 COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Install dependencies with retry, timeout, and faster mirror
-RUN pip install --no-cache-dir -r requirements.txt \
-    --timeout 300 --retries 10 -i https://pypi.org/simple \
-    || pip install --no-cache-dir -r requirements.txt \
-    --timeout 300 --retries 10 -i https://pypi.org/simple
+# Copy application files
+COPY dual_rag_orchestrator.py .
+COPY api.py .
 
-# Copy the rest of your app
-COPY . .
-
-# Expose port (optional, for clarity)
+# Expose port
 EXPOSE 8000
 
-# Start the app with hypercorn
-CMD ["hypercorn", "app:app", "--bind", "0.0.0.0:8000"]
+# Run the API
+CMD ["python", "api.py", "--port", "8000"]

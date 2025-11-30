@@ -36,26 +36,33 @@ services:
     depends_on:
       - minio
 
-  quiz-generation:
-    build: ./quiz-generation
-    ports:
-      - "3003:8000"
-    env_file:
-      - ./quiz-generation/.env
-    depends_on:
-      - minio
-
+  # Quiz Module - Combined RAG Service (MCQ + Theory on single endpoint)
   quiz-rag:
     build: ./quiz-rag
+    container_name: quiz-rag
     ports:
       - "8001:8000"
     env_file:
       - ./quiz-rag/.env
     volumes:
       - ./quiz-rag/chroma_db:/app/chroma_db
-      - ../data:/app/data:ro
+      - ../data/MCQ:/app/data/MCQ:ro
+      - ../data/Theory:/app/data/Theory:ro
     depends_on:
       - minio
+
+  # Quiz Module - Orchestrator (generation + optional RAG)
+  quiz-generation:
+    build: ./quiz-generation
+    container_name: quiz-generation
+    ports:
+      - "3003:8000"
+    env_file:
+      - ./quiz-generation/.env
+    environment:
+      - RAG_SERVICE_URL=http://quiz-rag:8000
+    depends_on:
+      - quiz-rag
 
   resume-ats-score:
     build: ./resume-ats-score
