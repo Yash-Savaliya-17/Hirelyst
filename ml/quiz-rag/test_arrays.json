@@ -1,0 +1,28 @@
+[
+  {
+    "question": "In Java, once an array is declared and initialized, how can its capacity be altered?",
+    "options": [
+      "The `array.resize()` method can be used to change its size dynamically.",
+      "The array's size is fixed, requiring a new array creation for different capacity.",
+      "Elements can be added beyond the initial capacity, automatically expanding the array."
+    ],
+    "correct_option_index": 1,
+    "explanation": "Arrays in Java have a fixed size once they are created. To effectively change the capacity, a new array with the desired size must be created, and elements from the original array must be manually copied over. There is no built-in `resize()` method for primitive arrays.",
+    "subject": "Programming",
+    "topic": "Arrays",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Given an array named `data` in Java, which of the following is the correct way to get its total number of elements?",
+    "options": [
+      "`data.size()`",
+      "`data.length()`",
+      "`data.length`"
+    ],
+    "correct_option_index": 2,
+    "explanation": "In Java, `length` is a public final field of an array that stores its size. It is not a method, so parentheses are not used. `data.size()` is commonly used for Collections (like `ArrayList`), and `data.length()` is used for `String` objects.",
+    "subject": "Programming",
+    "topic": "Arrays",
+    "difficulty": "medium"
+  }
+]

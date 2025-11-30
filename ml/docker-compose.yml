@@ -1,0 +1,96 @@
+services:
+  # MinIO Object Storage (S3 Alternative)
+  minio:
+    image: minio/minio:latest
+    container_name: minio
+    command: server /data --console-address ":9001"
+    ports:
+      - "9000:9000"   # MinIO API
+      - "9001:9001"   # MinIO Console (Web UI)
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin123
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  analysis:
+    build: ./analysis
+    ports:
+      - "3001:8000"
+    env_file:
+      - ./analysis/.env
+    depends_on:
+      - minio
+
+  interview-question:
+    build: ./interview-question
+    ports:
+      - "3002:8000"
+    env_file:
+      - ./interview-question/.env
+    depends_on:
+      - minio
+
+  quiz-generation:
+    build: ./quiz-generation
+    ports:
+      - "3003:8000"
+    env_file:
+      - ./quiz-generation/.env
+    depends_on:
+      - minio
+
+  quiz-rag:
+    build: ./quiz-rag
+    ports:
+      - "8001:8000"
+    env_file:
+      - ./quiz-rag/.env
+    volumes:
+      - ./quiz-rag/chroma_db:/app/chroma_db
+      - ../data:/app/data:ro
+    depends_on:
+      - minio
+
+  resume-ats-score:
+    build: ./resume-ats-score
+    ports:
+      - "3004:8000"
+    env_file:
+      - ./resume-ats-score/.env
+    depends_on:
+      - minio
+
+  resume-parser:
+    build: ./resume-parser
+    ports:
+      - "3005:8000"
+    env_file:
+      - ./resume-parser/.env
+    depends_on:
+      - minio
+
+  speech-to-text:
+    build: ./speech-to-text
+    ports:
+      - "3006:8000"
+    env_file:
+      - ./speech-to-text/.env
+    depends_on:
+      - minio
+
+  facial-expression:
+    build: ./facial-expression
+    ports:
+      - "3008:8000"
+    depends_on:
+      - minio
+
+volumes:
+  minio_data:
+    driver: local

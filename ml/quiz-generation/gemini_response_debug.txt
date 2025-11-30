@@ -1,0 +1,56 @@
+```json
+[
+  {
+    "question": "Which statement most accurately describes the relationship between 'Square' and 'Rectangle'?",
+    "options": {
+      "A": "Square is always a Rectangle, but a Rectangle is not always a Square",
+      "B": "Rectangle is always a Square, but a Square is not always a Rectangle",
+      "C": "Square and Rectangle are mutually exclusive",
+      "D": "Square and Rectangle are always identical"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "If a statement 'Some X are Y' is true, which of the following conclusions can be logically inferred?",
+    "options": {
+      "A": "Some Y are X",
+      "B": "All X are Y",
+      "C": "No X are Y",
+      "D": "All Y are X"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "A certain village has two schools, namely 'ABC' and 'DEF'. 60% of students in 'ABC' are boys and 40% of students in 'DEF' are girls. The ratio of boys to girls in the entire village is 17:13. What is the ratio of students in 'ABC' to 'DEF'?",
+    "options": {
+      "A": "3:5",
+      "B": "5:3",
+      "C": "7:5",
+      "D": "5:7"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "Statement: All cats are animals.
+                  Conclusion: All animals are cats.
+                 Is the conclusion logically valid?",
+    "options": {
+      "A": "Yes",
+      "B": "No",
+      "C": "Cannot be determined",
+      "D": "Depends on the context"
+    },
+    "correct_answer": "B"
+  },
+  {
+    "question": "A bus departs from City A at 9:00 AM and travels to City B, a distance of 250 miles. The bus maintains a constant speed throughout the journey. If the bus arrives in City B at 1:30 PM, what is its average speed in miles per hour (mph)?",
+    "options": {
+      "A": 60 mph",
+      "B": 75 mph",
+      "C": 90 mph",
+      "D": 105 mph"
+    },
+    "correct_answer": "B"
+  }
+]
+```

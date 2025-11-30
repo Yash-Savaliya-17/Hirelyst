@@ -1,0 +1,25 @@
+env
+
+*__pycache__
+*.env
+
+# */__pycache__
+
+.idea
+
+*.dat
+
+*.DS_Store
+
+*myenv
+
+quiz-generation/quiz_env
+analysis/analysis_env
+resume-ats-score/resume_env
+facial-expression/facial_env
+facial-expression/results
+facial-expression/uploads
+coding-question/codeQ_env
+interview-question/question_gen
+
+*.mp4

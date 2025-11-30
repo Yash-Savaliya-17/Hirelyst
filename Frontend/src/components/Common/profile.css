@@ -1,0 +1,22 @@
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Dark background for the track */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #787878bf; /* Red color for the scrollbar handle */
+    border-radius: 5px; /* Rounded edges */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #7a7a7abd; /* Slightly darker red on hover */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:active {
+    background: #7676768b; /* Even darker red when active */
+  }
+  

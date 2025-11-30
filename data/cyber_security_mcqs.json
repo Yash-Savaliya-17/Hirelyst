@@ -1,0 +1,2892 @@
+[
+    {
+        "id": "cyber_security_mcq_1",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "What is Cyber Security?\n\na) Cyber Security provides security against malware\n\nb) Cyber Security provides security against cyber-terrorists\n\nc) Cyber Security protects a system from cyber attacks\n\nd) All of the mentioned\n\n\nView Answer",
+        "options": [
+            "Cyber security protects criminals",
+            "Cyber security protects internet-connected systems",
+            "Cyber security protects hackers",
+            "None of the mentioned"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nIt protects internet-connected systems such as hardware, software, and data from cyber-attacks. It aims to reduce cyber attacks against the system, network, and technologies by reducing unauthorized exploitation, vulnerability, and threats.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_2",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "What does cyber security protect?\n\na) Cyber security protects criminals\n\nb) Cyber security protects internet-connected systems\n\nc) Cyber security protects hackers\n\nd) None of the mentioned\n\n\nView Answer",
+        "options": [
+            "August Kerckhoffs",
+            "Bob Thomas",
+            "Robert",
+            "Charles"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nAugust Kerckhoffs, a linguist and German professor at HEC, wrote an essay in the Journal of Military Science in February 1883. Kerckhoff had unwittingly established the foundations for contemporary encryption, earning him the title of “Father of Computer Security.”",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_3",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Who is the father of computer security?\n\na) August Kerckhoffs\n\nb) Bob Thomas\n\nc) Robert\n\nd) Charles\n\n\nView Answer",
+        "options": [
+            "Cyber attack",
+            "Computer security",
+            "Cryptography",
+            "Digital hacking"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nAn effort to steal, spy on, damage, or destroy diverse components of cyberspace, such as computer systems, related peripherals, network systems, and information, is known as a cyber attack.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_security_mcq_4",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following is defined as an attempt to steal, spy, damage or destroy computer systems, networks, or their associated information?\n\na) Cyber attack\n\nb) Computer security\n\nc) Cryptography\n\nd) Digital hacking\n\n\nView Answer",
+        "options": [
+            "Cloud Security",
+            "Network Security",
+            "Application Security",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer:d\nSince technology is improving, the threat and attacks against the technology are also increasing. Hence, to provide security, it is divided into the following types:\nCloud Security: Provides security for the data stored on the cloud.\nNetwork Security: Protects the internal network from threats.\nApplication Security: Protects data stored in the application software.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_5",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following is a type of cyber security?\n\na) Cloud Security\n\nb) Network Security\n\nc) Application Security\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Compliance",
+            "Defense against internal threats",
+            "Threat Prevention",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nThe features are as follows:\nCompliance: Creating a program that meets the requirements and rules of the users.\nDefense against internal threats: Should provide security against internal exploitation.\nThreat Prevention: Should be capable of detecting the threat and preventing them.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_6",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "What are the features of cyber security?\n\na) Compliance\n\nb) Defense against internal threats\n\nc) Threat Prevention\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Confidentiality",
+            "Integrity",
+            "Availability",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nThe objectives of network security are Confidentiality, Integrity, and Availability.\nConfidentiality: The function of confidentiality is to keep sensitive company information safe from unwanted access. The confidentiality component of network security ensures that data is only accessible to those who are authorized to see it.\nIntegrity: This goal entails ensuring and preserving data accuracy and consistency. The purpose of integrity is to ensure that data is accurate and not tampered with by unauthorized individuals.\nAvailability: The purpose of availability in Network Security is to ensure that data, network resources, and services are always available to legitimate users, whenever they need them.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_security_mcq_7",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following is an objective of network security?\n\na) Confidentiality\n\nb) Integrity\n\nc) Availability\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Denial of Service",
+            "Man in the Middle",
+            "Malware",
+            "AES"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nDenial of Service, Man in the Middle, and Malware exploit the system causing a threat to security, hence they are considered as cybercrime. AES (Advanced Encryption Standard) provides security by encrypting the data.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_security_mcq_8",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following is not a cybercrime?\n\na) Denial of Service\n\nb) Man in the Middle\n\nc) Malware\n\nd) AES\n\n\nView Answer",
+        "options": [
+            "Internet Of Things",
+            "AI",
+            "Database",
+            "Attacks"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nThe Internet of Things (IoT) is a network of physical objects embedded with sensors, software, and other technologies to connect and exchange data with other devices and systems through the internet.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_security_mcq_9",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following is a component of cyber security?\n\na) Internet Of Things\n\nb) AI\n\nc) Database\n\nd) Attacks\n\n\nView Answer",
+        "options": [
+            "Phishing",
+            "SQL Injections",
+            "Password Attack",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nAttacks are Phishing, SQL Injections, and Password Attack.\nPhishing: The attacker sends a large number of fraudulent emails and gains access to the system.\nSQL Injections: The attacker gains access to the protected information by adding malicious code to the SQL server.\nPassword Attack: Attackers gain access to the passwords unethically and gain access to the confidential data.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_security_mcq_10",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following is a type of cyber attack?\n\na) Phishing\n\nb) SQL Injections\n\nc) Password Attack\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Makes the system slower",
+            "Minimizes computer freezing and crashes",
+            "Gives privacy to users",
+            "Protects system against viruses"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nThe advantages are minimization of computer freezing and crashes, user privacy, and protection against viruses, worms, etc. Disadvantages include the system becoming slow, configuring firewalls correctly can be difficult, need to update the new software in order to keep security up to date.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_security_mcq_11",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following is not an advantage of cyber security?\n\na) Makes the system slower\n\nb) Minimizes computer freezing and crashes\n\nc) Gives privacy to users\n\nd) Protects system against viruses\n\n\nView Answer",
+        "options": [
+            "Richard Stallman",
+            "William Gibson",
+            "Andrew Tannenbaum",
+            "Scott Fahlman"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nWilliam Gibson, an American-Canadian fiction pioneer, and coiner, examined the many streams of technology and invented the word “cyberspace” in 1821. The phrase refers to linked technologies that aid in information exchange, interaction with digital devices, storage and digital entertainment, computer and network security, and other information technology-related matters.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_12",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "“Cyberspace” was coined by _________\n\na) Richard Stallman\n\nb) William Gibson\n\nc) Andrew Tannenbaum\n\nd) Scott Fahlman\n\n\nView Answer",
+        "options": [
+            "1991",
+            "1983",
+            "1970",
+            "1964"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nIn the case of hackers in the 1970s, hackers and cyber thieves found out how wired technologies operate and how they might be abused to obtain a competitive edge or misuse the technology.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_security_mcq_13",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "In which year has hacking become a practical crime and a matter of concern in the field of cyber technology?\n\na) 1991\n\nb) 1983\n\nc) 1970\n\nd) 1964\n\n\nView Answer",
+        "options": [
+            "Nation / State sponsored hackers",
+            "CIA triad",
+            "Special Hackers",
+            "Government Hackers"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nNation / State-sponsored hackers are those who are engaged or paid by a nation’s or state’s government to safeguard the country from cyber terrorists and other groups or individuals, as well as to expose their plans, communications, and activities.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_14",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Governments hired some highly skilled hackers for providing cyber security for the country or state. These types of hackers are termed as _______\n\na) Nation / State sponsored hackers\n\nb) CIA triad\n\nc) Special Hackers\n\nd) Government Hackers\n\n\nView Answer",
+        "options": [
+            "Exploit",
+            "Attack",
+            "Threat",
+            "Vulnerability"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nA threat is a possible danger that might lead to a security breach and cause harm to the system or network. Vulnerability is a word that refers to a flaw in a network or system that might be exploited by an attacker. Exploiting a security flaw might result in unexpected and unwanted effects. A cyber-attack is an attempt by attackers to alter, delete, steal or expose any specific data by gaining unauthorized access.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_15",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following act violates cyber security?\n\na) Exploit\n\nb) Attack\n\nc) Threat\n\nd) Vulnerability\n\n\nView Answer",
+        "options": [
+            "Vulnerability",
+            "Attack",
+            "Threat",
+            "Exploit"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nA threat is defined as a potential hazard that might result in a breach of security and cause harm to the system or network. Vulnerability is a term that refers to a weakness in a network or system that an attacker may exploit. Exploiting a weakness in security might have unintended and undesirable consequences.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_16",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following actions compromise cyber security?\n\na) Vulnerability\n\nb) Attack\n\nc) Threat\n\nd) Exploit\n\n\nView Answer",
+        "options": [
+            "Pharming",
+            "Website-Duplication",
+            "Mimicking",
+            "Spamming"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nPharming is a strategy and approach used by cybercriminals to create phony web pages and sites in order to mislead users into giving over personal information such as login IDs and passwords.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_17",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following is the hacking approach where cyber-criminals design fake websites or pages for tricking or gaining additional traffic?\n\na) Pharming\n\nb) Website-Duplication\n\nc) Mimicking\n\nd) Spamming\n\n\nView Answer",
+        "options": [
+            "MiTM",
+            "Injecting Trojans to a target victim",
+            "Credit card details leak in the deep web",
+            "Phishing"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nPeer-to-peer includes phishing, as well as the distribution of Trojans and worms to individuals. The leakage of a huge number of people’s credit card data on the deep web, on the other hand, is classified as a computer-as-weapon cyber-crime.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_18",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following is not a type of peer-to-peer cyber-crime?\n\na) MiTM\n\nb) Injecting Trojans to a target victim\n\nc) Credit card details leak in the deep web\n\nd) Phishing\n\n\nView Answer",
+        "options": [
+            "Clickjacking",
+            "Buffer-overflow",
+            "Phishing",
+            "MiTM"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nThe excess data that contains certain specific instructions in the memory for actions are projected by a cyber-criminal or penetration tester to break the system in a buffer-overflow attack.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_19",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "A cyber-criminal or penetration tester uses the additional data that stores certain special instructions in the memory for activities to break the system in which of the following attack?\n\na) Clickjacking\n\nb) Buffer-overflow\n\nc) Phishing\n\nd) MiTM\n\n\nView Answer",
+        "options": [
+            "ip tracker",
+            "emails",
+            "websites",
+            "web pages"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nEnumeration by cyber-attackers is also feasible via websites since attackers target websites in order to obtain the victim’s or target user’s IP address.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_20",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following do Cyber attackers commonly target for fetching IP address of a target or victim user?\n\na) ip tracker\n\nb) emails\n\nc) websites\n\nd) web pages\n\n\nView Answer",
+        "options": [
+            "Digital crime",
+            "Threats",
+            "System hijacking",
+            "Cyber Attack"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nExtortion, identity theft, email hacking, digital surveillance, stealing hardware, mobile hacking, and physical security breaches are all examples of cyber assaults or activities.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_21",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following is defined as an attempt to harm, damage or cause threat to a system or network?\n\na) Digital crime\n\nb) Threats\n\nc) System hijacking\n\nd) Cyber Attack\n\n\nView Answer",
+        "options": [
+            "White Hat Hackers",
+            "Black Hat Hackers",
+            "Hactivists",
+            "Gray Hat Hackers"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nBlack Hat hackers, often known as “crackers,” are a sort of cyber crime that gain illegal access to a user’s account or system in order to steal confidential data or introduce malware into the system for personal gain or to harm the company.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_22",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "They are nefarious hackers, and their main motive is to gain financial profit by doing cyber crimes. Who are “they” referred to here?\n\na) White Hat Hackers\n\nb) Black Hat Hackers\n\nc) Hactivists\n\nd) Gray Hat Hackers\n\n\nView Answer",
+        "options": [
+            "Software Security Specialist",
+            "CEO of the organization",
+            "Security Auditor",
+            "IT Security Engineer"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nThis is a position in a company or organisation where an individual develops and maintains different systems and security tools for the company or organisation to which he or she belongs.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_23",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "IT security in any firm or organization is maintained and handled by ____________________\n\na) Software Security Specialist\n\nb) CEO of the organization\n\nc) Security Auditor\n\nd) IT Security Engineer\n\n\nView Answer",
+        "options": [
+            "MIT",
+            "New York University",
+            "Harvard University",
+            "Bell’s Lab"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nThe term “hacker” was coined at MIT (Massachusetts Institute of Technology) because individuals and highly competent professionals use computer languages to address various challenges. In this context, labels such as geeks and nerds have been coined.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_24",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Where did the term “hacker” originate?\n\na) MIT\n\nb) New York University\n\nc) Harvard University\n\nd) Bell’s Lab\n\n\nView Answer",
+        "options": [
+            "Attack",
+            "Exploit",
+            "Vulnerability",
+            "Threat"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nVulnerability is a term that refers to a weakness in a network or system that an attacker may exploit. Exploiting a weakness in security might have unintended and undesirable consequences.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_security_mcq_25",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "What is the existence of weakness in a system or network is known as?\n\na) Attack\n\nb) Exploit\n\nc) Vulnerability\n\nd) Threat\n\n\nView Answer",
+        "options": [
+            "MiTM attack",
+            "Phishing attack",
+            "Website attack",
+            "DoS attack"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nPhishing is a type of cybercrime in which a person is digitally persuaded to disclose private information. Phishing comes in a variety of forms. Some of them employ malware and emails to divert users to various websites.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_26",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following is an internet scam done by cyber-criminals where the user is convinced digitally to provide confidential information.\n\na) MiTM attack\n\nb) Phishing attack\n\nc) Website attack\n\nd) DoS attack\n\n\nView Answer",
+        "options": [
+            "Exfiltration",
+            "Research and info-gathering",
+            "Attack the system",
+            "Fixing the bugs"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nDuring a hack, cyber-criminals first do research on the target, gathering data about the victim’s system and network. Then go ahead and attack. Once the attacker has gained access, he or she takes sensitive information.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_27",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following is not a step followed by cyber-criminals in data breaching?\n\na) Exfiltration\n\nb) Research and info-gathering\n\nc) Attack the system\n\nd) Fixing the bugs\n\n\nView Answer",
+        "options": [
+            "Browsing data",
+            "Instant messaging",
+            "Login using ID",
+            "Relay chats"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nLogin using ID will obviously take your ID in order to access your account and is not the headache of Tor. Privacy regarding instant messaging, browsing data, relay chats are some of the following online services protected by Tor.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_28",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following online service’s privacy cannot be protected using Tor?\n\na) Browsing data\n\nb) Instant messaging\n\nc) Login using ID\n\nd) Relay chats\n\n\nView Answer",
+        "options": [
+            "Yellow Hat hackers",
+            "Grey Hat hackers",
+            "Red Hat Hackers",
+            "White-Black Hat Hackers"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nGrey Hat Hackers are a hybrid of ethical and unethical hacker personalities. They hack other people’s computers for fun, but they don’t hurt them, and they exploit network faults and vulnerabilities without the admin or owner’s awareness.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_29",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following term refers to a group of hackers who are both white and black hat?\n\na) Yellow Hat hackers\n\nb) Grey Hat hackers\n\nc) Red Hat Hackers\n\nd) White-Black Hat Hackers\n\n\nView Answer",
+        "options": [
+            "Mail Password",
+            "Email Finder Pro",
+            "Mail PassView",
+            "Sendinc"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nSendinc is not a tool that compromises email data. It is used to protect business email accounts and provides a fast web-based solution for businesses to start delivering secure emails. The other three are email hacking tools.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_30",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following is not an email-related hacking tool?\n\na) Mail Password\n\nb) Email Finder Pro\n\nc) Mail PassView\n\nd) Sendinc\n\n\nView Answer",
+        "options": [
+            "botnets",
+            "programs",
+            "virus",
+            "worms"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nBotnets on infected mobile devices are waiting for orders from their owners. It starts a DDoS flood attack after receiving the owner’s instructions. As a result, calls are not connected or data is not sent.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_security_mcq_31",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following DDoS in mobile systems wait for the owner to trigger the cyber attack?\n\na) botnets\n\nb) programs\n\nc) virus\n\nd) worms\n\n\nView Answer",
+        "options": [
+            "WPA3",
+            "WPA2",
+            "WPA",
+            "WEP"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nWireless security is an important aspect of cyber-security. Wired Equivalent Privacy (WEP), Wi-Fi Protected Access (WPA), WPA2, and WPA3 are the most common kinds of wireless security. WEP is a famously insecure encryption protocol.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_security_mcq_32",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following is the least strong security encryption standard?\n\na) WPA3\n\nb) WPA2\n\nc) WPA\n\nd) WEP\n\n\nView Answer",
+        "options": [
+            "Trojan",
+            "Antivirus",
+            "Worm",
+            "Virus"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nStuxnet is a popular and powerful worm that came into existence in mid 2010, which was very powerful as it was accountable for the cause of huge damage to Iran’s Nuclear program. It mainly targets the PLCs (Programmable Logic Controllers) in a system.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_security_mcq_33",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following is a Stuxnet?\n\na) Trojan\n\nb) Antivirus\n\nc) Worm\n\nd) Virus\n\n\nView Answer",
+        "options": [
+            "Operating System fingerprinting",
+            "Operating System penetration testing",
+            "Digital-printing",
+            "Machine printing"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nOS fingerprinting is an ethical hacking technique used for determining what operating system (OS) is running on a remote computer. OS Fingerprinting is the practice of examining data packets that come from a network in order to extract intelligence that may be utilized in future assaults.",
+        "source": "sanfoundry",
+        "difficulty": "easy"
+    },
+    {
+        "id": "cyber_security_mcq_34",
+        "subject": "Cyber Security",
+        "topic": "Basics",
+        "type": "mcq",
+        "question": "Which of the following ethical hacking technique is used for determining which operating system (OS) is running on a remote computer?\n\na) Operating System fingerprinting\n\nb) Operating System penetration testing\n\nc) Digital-printing\n\nd) Machine printing\n\n\nView Answer",
+        "options": [
+            "Steganography",
+            "Chorography",
+            "Cryptography",
+            "Authentication"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nOrdinary files are targeted by hackers or other cyber criminals in order to disguise distinct data or information within another data file. You can reduce the risk of data leaking by employing steganography.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_1",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "What is Cyber Security?\n\na) Cyber Security provides security against malware\n\nb) Cyber Security provides security against cyber-terrorists\n\nc) Cyber Security protects a system from cyber attacks\n\nd) All of the mentioned\n\n\nView Answer",
+        "options": [
+            "Cyber security protects criminals",
+            "Cyber security protects internet-connected systems",
+            "Cyber security protects hackers",
+            "None of the mentioned"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nIt protects internet-connected systems such as hardware, software, and data from cyber-attacks. It aims to reduce cyber attacks against the system, network, and technologies by reducing unauthorized exploitation, vulnerability, and threats.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_2",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "What does cyber security protect?\n\na) Cyber security protects criminals\n\nb) Cyber security protects internet-connected systems\n\nc) Cyber security protects hackers\n\nd) None of the mentioned\n\n\nView Answer",
+        "options": [
+            "August Kerckhoffs",
+            "Bob Thomas",
+            "Robert",
+            "Charles"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nAugust Kerckhoffs, a linguist and German professor at HEC, wrote an essay in the Journal of Military Science in February 1883. Kerckhoff had unwittingly established the foundations for contemporary encryption, earning him the title of “Father of Computer Security.”",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_3",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Who is the father of computer security?\n\na) August Kerckhoffs\n\nb) Bob Thomas\n\nc) Robert\n\nd) Charles\n\n\nView Answer",
+        "options": [
+            "Cyber attack",
+            "Computer security",
+            "Cryptography",
+            "Digital hacking"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nAn effort to steal, spy on, damage, or destroy diverse components of cyberspace, such as computer systems, related peripherals, network systems, and information, is known as a cyber attack.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_4",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following is defined as an attempt to steal, spy, damage or destroy computer systems, networks, or their associated information?\n\na) Cyber attack\n\nb) Computer security\n\nc) Cryptography\n\nd) Digital hacking\n\n\nView Answer",
+        "options": [
+            "Cloud Security",
+            "Network Security",
+            "Application Security",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer:d\nSince technology is improving, the threat and attacks against the technology are also increasing. Hence, to provide security, it is divided into the following types:\nCloud Security: Provides security for the data stored on the cloud.\nNetwork Security: Protects the internal network from threats.\nApplication Security: Protects data stored in the application software.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_5",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following is a type of cyber security?\n\na) Cloud Security\n\nb) Network Security\n\nc) Application Security\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Compliance",
+            "Defense against internal threats",
+            "Threat Prevention",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nThe features are as follows:\nCompliance: Creating a program that meets the requirements and rules of the users.\nDefense against internal threats: Should provide security against internal exploitation.\nThreat Prevention: Should be capable of detecting the threat and preventing them.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_6",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "What are the features of cyber security?\n\na) Compliance\n\nb) Defense against internal threats\n\nc) Threat Prevention\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Confidentiality",
+            "Integrity",
+            "Availability",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nThe objectives of network security are Confidentiality, Integrity, and Availability.\nConfidentiality: The function of confidentiality is to keep sensitive company information safe from unwanted access. The confidentiality component of network security ensures that data is only accessible to those who are authorized to see it.\nIntegrity: This goal entails ensuring and preserving data accuracy and consistency. The purpose of integrity is to ensure that data is accurate and not tampered with by unauthorized individuals.\nAvailability: The purpose of availability in Network Security is to ensure that data, network resources, and services are always available to legitimate users, whenever they need them.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_7",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following is an objective of network security?\n\na) Confidentiality\n\nb) Integrity\n\nc) Availability\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Denial of Service",
+            "Man in the Middle",
+            "Malware",
+            "AES"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nDenial of Service, Man in the Middle, and Malware exploit the system causing a threat to security, hence they are considered as cybercrime. AES (Advanced Encryption Standard) provides security by encrypting the data.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_8",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following is not a cybercrime?\n\na) Denial of Service\n\nb) Man in the Middle\n\nc) Malware\n\nd) AES\n\n\nView Answer",
+        "options": [
+            "Internet Of Things",
+            "AI",
+            "Database",
+            "Attacks"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nThe Internet of Things (IoT) is a network of physical objects embedded with sensors, software, and other technologies to connect and exchange data with other devices and systems through the internet.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_9",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following is a component of cyber security?\n\na) Internet Of Things\n\nb) AI\n\nc) Database\n\nd) Attacks\n\n\nView Answer",
+        "options": [
+            "Phishing",
+            "SQL Injections",
+            "Password Attack",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nAttacks are Phishing, SQL Injections, and Password Attack.\nPhishing: The attacker sends a large number of fraudulent emails and gains access to the system.\nSQL Injections: The attacker gains access to the protected information by adding malicious code to the SQL server.\nPassword Attack: Attackers gain access to the passwords unethically and gain access to the confidential data.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_10",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following is a type of cyber attack?\n\na) Phishing\n\nb) SQL Injections\n\nc) Password Attack\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Makes the system slower",
+            "Minimizes computer freezing and crashes",
+            "Gives privacy to users",
+            "Protects system against viruses"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nThe advantages are minimization of computer freezing and crashes, user privacy, and protection against viruses, worms, etc. Disadvantages include the system becoming slow, configuring firewalls correctly can be difficult, need to update the new software in order to keep security up to date.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_11",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following is not an advantage of cyber security?\n\na) Makes the system slower\n\nb) Minimizes computer freezing and crashes\n\nc) Gives privacy to users\n\nd) Protects system against viruses\n\n\nView Answer",
+        "options": [
+            "Richard Stallman",
+            "William Gibson",
+            "Andrew Tannenbaum",
+            "Scott Fahlman"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nWilliam Gibson, an American-Canadian fiction pioneer, and coiner, examined the many streams of technology and invented the word “cyberspace” in 1821. The phrase refers to linked technologies that aid in information exchange, interaction with digital devices, storage and digital entertainment, computer and network security, and other information technology-related matters.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_12",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "“Cyberspace” was coined by _________\n\na) Richard Stallman\n\nb) William Gibson\n\nc) Andrew Tannenbaum\n\nd) Scott Fahlman\n\n\nView Answer",
+        "options": [
+            "1991",
+            "1983",
+            "1970",
+            "1964"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nIn the case of hackers in the 1970s, hackers and cyber thieves found out how wired technologies operate and how they might be abused to obtain a competitive edge or misuse the technology.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_13",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "In which year has hacking become a practical crime and a matter of concern in the field of cyber technology?\n\na) 1991\n\nb) 1983\n\nc) 1970\n\nd) 1964\n\n\nView Answer",
+        "options": [
+            "Nation / State sponsored hackers",
+            "CIA triad",
+            "Special Hackers",
+            "Government Hackers"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nNation / State-sponsored hackers are those who are engaged or paid by a nation’s or state’s government to safeguard the country from cyber terrorists and other groups or individuals, as well as to expose their plans, communications, and activities.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_14",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Governments hired some highly skilled hackers for providing cyber security for the country or state. These types of hackers are termed as _______\n\na) Nation / State sponsored hackers\n\nb) CIA triad\n\nc) Special Hackers\n\nd) Government Hackers\n\n\nView Answer",
+        "options": [
+            "Exploit",
+            "Attack",
+            "Threat",
+            "Vulnerability"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nA threat is a possible danger that might lead to a security breach and cause harm to the system or network. Vulnerability is a word that refers to a flaw in a network or system that might be exploited by an attacker. Exploiting a security flaw might result in unexpected and unwanted effects. A cyber-attack is an attempt by attackers to alter, delete, steal or expose any specific data by gaining unauthorized access.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_15",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following act violates cyber security?\n\na) Exploit\n\nb) Attack\n\nc) Threat\n\nd) Vulnerability\n\n\nView Answer",
+        "options": [
+            "Vulnerability",
+            "Attack",
+            "Threat",
+            "Exploit"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nA threat is defined as a potential hazard that might result in a breach of security and cause harm to the system or network. Vulnerability is a term that refers to a weakness in a network or system that an attacker may exploit. Exploiting a weakness in security might have unintended and undesirable consequences.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_16",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following actions compromise cyber security?\n\na) Vulnerability\n\nb) Attack\n\nc) Threat\n\nd) Exploit\n\n\nView Answer",
+        "options": [
+            "Pharming",
+            "Website-Duplication",
+            "Mimicking",
+            "Spamming"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nPharming is a strategy and approach used by cybercriminals to create phony web pages and sites in order to mislead users into giving over personal information such as login IDs and passwords.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_17",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following is the hacking approach where cyber-criminals design fake websites or pages for tricking or gaining additional traffic?\n\na) Pharming\n\nb) Website-Duplication\n\nc) Mimicking\n\nd) Spamming\n\n\nView Answer",
+        "options": [
+            "MiTM",
+            "Injecting Trojans to a target victim",
+            "Credit card details leak in the deep web",
+            "Phishing"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nPeer-to-peer includes phishing, as well as the distribution of Trojans and worms to individuals. The leakage of a huge number of people’s credit card data on the deep web, on the other hand, is classified as a computer-as-weapon cyber-crime.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_18",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following is not a type of peer-to-peer cyber-crime?\n\na) MiTM\n\nb) Injecting Trojans to a target victim\n\nc) Credit card details leak in the deep web\n\nd) Phishing\n\n\nView Answer",
+        "options": [
+            "Clickjacking",
+            "Buffer-overflow",
+            "Phishing",
+            "MiTM"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nThe excess data that contains certain specific instructions in the memory for actions are projected by a cyber-criminal or penetration tester to break the system in a buffer-overflow attack.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_19",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "A cyber-criminal or penetration tester uses the additional data that stores certain special instructions in the memory for activities to break the system in which of the following attack?\n\na) Clickjacking\n\nb) Buffer-overflow\n\nc) Phishing\n\nd) MiTM\n\n\nView Answer",
+        "options": [
+            "ip tracker",
+            "emails",
+            "websites",
+            "web pages"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nEnumeration by cyber-attackers is also feasible via websites since attackers target websites in order to obtain the victim’s or target user’s IP address.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_20",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following do Cyber attackers commonly target for fetching IP address of a target or victim user?\n\na) ip tracker\n\nb) emails\n\nc) websites\n\nd) web pages\n\n\nView Answer",
+        "options": [
+            "Digital crime",
+            "Threats",
+            "System hijacking",
+            "Cyber Attack"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nExtortion, identity theft, email hacking, digital surveillance, stealing hardware, mobile hacking, and physical security breaches are all examples of cyber assaults or activities.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_21",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following is defined as an attempt to harm, damage or cause threat to a system or network?\n\na) Digital crime\n\nb) Threats\n\nc) System hijacking\n\nd) Cyber Attack\n\n\nView Answer",
+        "options": [
+            "White Hat Hackers",
+            "Black Hat Hackers",
+            "Hactivists",
+            "Gray Hat Hackers"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nBlack Hat hackers, often known as “crackers,” are a sort of cyber crime that gain illegal access to a user’s account or system in order to steal confidential data or introduce malware into the system for personal gain or to harm the company.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_22",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "They are nefarious hackers, and their main motive is to gain financial profit by doing cyber crimes. Who are “they” referred to here?\n\na) White Hat Hackers\n\nb) Black Hat Hackers\n\nc) Hactivists\n\nd) Gray Hat Hackers\n\n\nView Answer",
+        "options": [
+            "Software Security Specialist",
+            "CEO of the organization",
+            "Security Auditor",
+            "IT Security Engineer"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nThis is a position in a company or organisation where an individual develops and maintains different systems and security tools for the company or organisation to which he or she belongs.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_23",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "IT security in any firm or organization is maintained and handled by ____________________\n\na) Software Security Specialist\n\nb) CEO of the organization\n\nc) Security Auditor\n\nd) IT Security Engineer\n\n\nView Answer",
+        "options": [
+            "MIT",
+            "New York University",
+            "Harvard University",
+            "Bell’s Lab"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nThe term “hacker” was coined at MIT (Massachusetts Institute of Technology) because individuals and highly competent professionals use computer languages to address various challenges. In this context, labels such as geeks and nerds have been coined.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_24",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Where did the term “hacker” originate?\n\na) MIT\n\nb) New York University\n\nc) Harvard University\n\nd) Bell’s Lab\n\n\nView Answer",
+        "options": [
+            "Attack",
+            "Exploit",
+            "Vulnerability",
+            "Threat"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nVulnerability is a term that refers to a weakness in a network or system that an attacker may exploit. Exploiting a weakness in security might have unintended and undesirable consequences.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_25",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "What is the existence of weakness in a system or network is known as?\n\na) Attack\n\nb) Exploit\n\nc) Vulnerability\n\nd) Threat\n\n\nView Answer",
+        "options": [
+            "MiTM attack",
+            "Phishing attack",
+            "Website attack",
+            "DoS attack"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nPhishing is a type of cybercrime in which a person is digitally persuaded to disclose private information. Phishing comes in a variety of forms. Some of them employ malware and emails to divert users to various websites.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_26",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following is an internet scam done by cyber-criminals where the user is convinced digitally to provide confidential information.\n\na) MiTM attack\n\nb) Phishing attack\n\nc) Website attack\n\nd) DoS attack\n\n\nView Answer",
+        "options": [
+            "Exfiltration",
+            "Research and info-gathering",
+            "Attack the system",
+            "Fixing the bugs"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nDuring a hack, cyber-criminals first do research on the target, gathering data about the victim’s system and network. Then go ahead and attack. Once the attacker has gained access, he or she takes sensitive information.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_27",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following is not a step followed by cyber-criminals in data breaching?\n\na) Exfiltration\n\nb) Research and info-gathering\n\nc) Attack the system\n\nd) Fixing the bugs\n\n\nView Answer",
+        "options": [
+            "Browsing data",
+            "Instant messaging",
+            "Login using ID",
+            "Relay chats"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nLogin using ID will obviously take your ID in order to access your account and is not the headache of Tor. Privacy regarding instant messaging, browsing data, relay chats are some of the following online services protected by Tor.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_28",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following online service’s privacy cannot be protected using Tor?\n\na) Browsing data\n\nb) Instant messaging\n\nc) Login using ID\n\nd) Relay chats\n\n\nView Answer",
+        "options": [
+            "Yellow Hat hackers",
+            "Grey Hat hackers",
+            "Red Hat Hackers",
+            "White-Black Hat Hackers"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nGrey Hat Hackers are a hybrid of ethical and unethical hacker personalities. They hack other people’s computers for fun, but they don’t hurt them, and they exploit network faults and vulnerabilities without the admin or owner’s awareness.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_29",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following term refers to a group of hackers who are both white and black hat?\n\na) Yellow Hat hackers\n\nb) Grey Hat hackers\n\nc) Red Hat Hackers\n\nd) White-Black Hat Hackers\n\n\nView Answer",
+        "options": [
+            "Mail Password",
+            "Email Finder Pro",
+            "Mail PassView",
+            "Sendinc"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nSendinc is not a tool that compromises email data. It is used to protect business email accounts and provides a fast web-based solution for businesses to start delivering secure emails. The other three are email hacking tools.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_30",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following is not an email-related hacking tool?\n\na) Mail Password\n\nb) Email Finder Pro\n\nc) Mail PassView\n\nd) Sendinc\n\n\nView Answer",
+        "options": [
+            "botnets",
+            "programs",
+            "virus",
+            "worms"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nBotnets on infected mobile devices are waiting for orders from their owners. It starts a DDoS flood attack after receiving the owner’s instructions. As a result, calls are not connected or data is not sent.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_31",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following DDoS in mobile systems wait for the owner to trigger the cyber attack?\n\na) botnets\n\nb) programs\n\nc) virus\n\nd) worms\n\n\nView Answer",
+        "options": [
+            "WPA3",
+            "WPA2",
+            "WPA",
+            "WEP"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nWireless security is an important aspect of cyber-security. Wired Equivalent Privacy (WEP), Wi-Fi Protected Access (WPA), WPA2, and WPA3 are the most common kinds of wireless security. WEP is a famously insecure encryption protocol.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_32",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following is the least strong security encryption standard?\n\na) WPA3\n\nb) WPA2\n\nc) WPA\n\nd) WEP\n\n\nView Answer",
+        "options": [
+            "Trojan",
+            "Antivirus",
+            "Worm",
+            "Virus"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nStuxnet is a popular and powerful worm that came into existence in mid 2010, which was very powerful as it was accountable for the cause of huge damage to Iran’s Nuclear program. It mainly targets the PLCs (Programmable Logic Controllers) in a system.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_33",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following is a Stuxnet?\n\na) Trojan\n\nb) Antivirus\n\nc) Worm\n\nd) Virus\n\n\nView Answer",
+        "options": [
+            "Operating System fingerprinting",
+            "Operating System penetration testing",
+            "Digital-printing",
+            "Machine printing"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nOS fingerprinting is an ethical hacking technique used for determining what operating system (OS) is running on a remote computer. OS Fingerprinting is the practice of examining data packets that come from a network in order to extract intelligence that may be utilized in future assaults.",
+        "source": "sanfoundry",
+        "difficulty": "easy"
+    },
+    {
+        "id": "cyber_laws_security_tools_bugs_and_vulnerabilities_mcq_34",
+        "subject": "Cyber Security",
+        "topic": "Cyber Laws, Security Tools, Bugs and Vulnerabilities",
+        "type": "mcq",
+        "question": "Which of the following ethical hacking technique is used for determining which operating system (OS) is running on a remote computer?\n\na) Operating System fingerprinting\n\nb) Operating System penetration testing\n\nc) Digital-printing\n\nd) Machine printing\n\n\nView Answer",
+        "options": [
+            "Steganography",
+            "Chorography",
+            "Cryptography",
+            "Authentication"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nOrdinary files are targeted by hackers or other cyber criminals in order to disguise distinct data or information within another data file. You can reduce the risk of data leaking by employing steganography.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_1",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "What is Cyber Security?\n\na) Cyber Security provides security against malware\n\nb) Cyber Security provides security against cyber-terrorists\n\nc) Cyber Security protects a system from cyber attacks\n\nd) All of the mentioned\n\n\nView Answer",
+        "options": [
+            "Cyber security protects criminals",
+            "Cyber security protects internet-connected systems",
+            "Cyber security protects hackers",
+            "None of the mentioned"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nIt protects internet-connected systems such as hardware, software, and data from cyber-attacks. It aims to reduce cyber attacks against the system, network, and technologies by reducing unauthorized exploitation, vulnerability, and threats.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_2",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "What does cyber security protect?\n\na) Cyber security protects criminals\n\nb) Cyber security protects internet-connected systems\n\nc) Cyber security protects hackers\n\nd) None of the mentioned\n\n\nView Answer",
+        "options": [
+            "August Kerckhoffs",
+            "Bob Thomas",
+            "Robert",
+            "Charles"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nAugust Kerckhoffs, a linguist and German professor at HEC, wrote an essay in the Journal of Military Science in February 1883. Kerckhoff had unwittingly established the foundations for contemporary encryption, earning him the title of “Father of Computer Security.”",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_3",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Who is the father of computer security?\n\na) August Kerckhoffs\n\nb) Bob Thomas\n\nc) Robert\n\nd) Charles\n\n\nView Answer",
+        "options": [
+            "Cyber attack",
+            "Computer security",
+            "Cryptography",
+            "Digital hacking"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nAn effort to steal, spy on, damage, or destroy diverse components of cyberspace, such as computer systems, related peripherals, network systems, and information, is known as a cyber attack.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "network_models_for_security_mcq_4",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following is defined as an attempt to steal, spy, damage or destroy computer systems, networks, or their associated information?\n\na) Cyber attack\n\nb) Computer security\n\nc) Cryptography\n\nd) Digital hacking\n\n\nView Answer",
+        "options": [
+            "Cloud Security",
+            "Network Security",
+            "Application Security",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer:d\nSince technology is improving, the threat and attacks against the technology are also increasing. Hence, to provide security, it is divided into the following types:\nCloud Security: Provides security for the data stored on the cloud.\nNetwork Security: Protects the internal network from threats.\nApplication Security: Protects data stored in the application software.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_5",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following is a type of cyber security?\n\na) Cloud Security\n\nb) Network Security\n\nc) Application Security\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Compliance",
+            "Defense against internal threats",
+            "Threat Prevention",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nThe features are as follows:\nCompliance: Creating a program that meets the requirements and rules of the users.\nDefense against internal threats: Should provide security against internal exploitation.\nThreat Prevention: Should be capable of detecting the threat and preventing them.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_6",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "What are the features of cyber security?\n\na) Compliance\n\nb) Defense against internal threats\n\nc) Threat Prevention\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Confidentiality",
+            "Integrity",
+            "Availability",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nThe objectives of network security are Confidentiality, Integrity, and Availability.\nConfidentiality: The function of confidentiality is to keep sensitive company information safe from unwanted access. The confidentiality component of network security ensures that data is only accessible to those who are authorized to see it.\nIntegrity: This goal entails ensuring and preserving data accuracy and consistency. The purpose of integrity is to ensure that data is accurate and not tampered with by unauthorized individuals.\nAvailability: The purpose of availability in Network Security is to ensure that data, network resources, and services are always available to legitimate users, whenever they need them.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "network_models_for_security_mcq_7",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following is an objective of network security?\n\na) Confidentiality\n\nb) Integrity\n\nc) Availability\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Denial of Service",
+            "Man in the Middle",
+            "Malware",
+            "AES"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nDenial of Service, Man in the Middle, and Malware exploit the system causing a threat to security, hence they are considered as cybercrime. AES (Advanced Encryption Standard) provides security by encrypting the data.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "network_models_for_security_mcq_8",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following is not a cybercrime?\n\na) Denial of Service\n\nb) Man in the Middle\n\nc) Malware\n\nd) AES\n\n\nView Answer",
+        "options": [
+            "Internet Of Things",
+            "AI",
+            "Database",
+            "Attacks"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nThe Internet of Things (IoT) is a network of physical objects embedded with sensors, software, and other technologies to connect and exchange data with other devices and systems through the internet.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "network_models_for_security_mcq_9",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following is a component of cyber security?\n\na) Internet Of Things\n\nb) AI\n\nc) Database\n\nd) Attacks\n\n\nView Answer",
+        "options": [
+            "Phishing",
+            "SQL Injections",
+            "Password Attack",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nAttacks are Phishing, SQL Injections, and Password Attack.\nPhishing: The attacker sends a large number of fraudulent emails and gains access to the system.\nSQL Injections: The attacker gains access to the protected information by adding malicious code to the SQL server.\nPassword Attack: Attackers gain access to the passwords unethically and gain access to the confidential data.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "network_models_for_security_mcq_10",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following is a type of cyber attack?\n\na) Phishing\n\nb) SQL Injections\n\nc) Password Attack\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Makes the system slower",
+            "Minimizes computer freezing and crashes",
+            "Gives privacy to users",
+            "Protects system against viruses"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nThe advantages are minimization of computer freezing and crashes, user privacy, and protection against viruses, worms, etc. Disadvantages include the system becoming slow, configuring firewalls correctly can be difficult, need to update the new software in order to keep security up to date.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "network_models_for_security_mcq_11",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following is not an advantage of cyber security?\n\na) Makes the system slower\n\nb) Minimizes computer freezing and crashes\n\nc) Gives privacy to users\n\nd) Protects system against viruses\n\n\nView Answer",
+        "options": [
+            "Richard Stallman",
+            "William Gibson",
+            "Andrew Tannenbaum",
+            "Scott Fahlman"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nWilliam Gibson, an American-Canadian fiction pioneer, and coiner, examined the many streams of technology and invented the word “cyberspace” in 1821. The phrase refers to linked technologies that aid in information exchange, interaction with digital devices, storage and digital entertainment, computer and network security, and other information technology-related matters.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_12",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "“Cyberspace” was coined by _________\n\na) Richard Stallman\n\nb) William Gibson\n\nc) Andrew Tannenbaum\n\nd) Scott Fahlman\n\n\nView Answer",
+        "options": [
+            "1991",
+            "1983",
+            "1970",
+            "1964"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nIn the case of hackers in the 1970s, hackers and cyber thieves found out how wired technologies operate and how they might be abused to obtain a competitive edge or misuse the technology.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "network_models_for_security_mcq_13",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "In which year has hacking become a practical crime and a matter of concern in the field of cyber technology?\n\na) 1991\n\nb) 1983\n\nc) 1970\n\nd) 1964\n\n\nView Answer",
+        "options": [
+            "Nation / State sponsored hackers",
+            "CIA triad",
+            "Special Hackers",
+            "Government Hackers"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nNation / State-sponsored hackers are those who are engaged or paid by a nation’s or state’s government to safeguard the country from cyber terrorists and other groups or individuals, as well as to expose their plans, communications, and activities.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_14",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Governments hired some highly skilled hackers for providing cyber security for the country or state. These types of hackers are termed as _______\n\na) Nation / State sponsored hackers\n\nb) CIA triad\n\nc) Special Hackers\n\nd) Government Hackers\n\n\nView Answer",
+        "options": [
+            "Exploit",
+            "Attack",
+            "Threat",
+            "Vulnerability"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nA threat is a possible danger that might lead to a security breach and cause harm to the system or network. Vulnerability is a word that refers to a flaw in a network or system that might be exploited by an attacker. Exploiting a security flaw might result in unexpected and unwanted effects. A cyber-attack is an attempt by attackers to alter, delete, steal or expose any specific data by gaining unauthorized access.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_15",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following act violates cyber security?\n\na) Exploit\n\nb) Attack\n\nc) Threat\n\nd) Vulnerability\n\n\nView Answer",
+        "options": [
+            "Vulnerability",
+            "Attack",
+            "Threat",
+            "Exploit"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nA threat is defined as a potential hazard that might result in a breach of security and cause harm to the system or network. Vulnerability is a term that refers to a weakness in a network or system that an attacker may exploit. Exploiting a weakness in security might have unintended and undesirable consequences.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_16",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following actions compromise cyber security?\n\na) Vulnerability\n\nb) Attack\n\nc) Threat\n\nd) Exploit\n\n\nView Answer",
+        "options": [
+            "Pharming",
+            "Website-Duplication",
+            "Mimicking",
+            "Spamming"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nPharming is a strategy and approach used by cybercriminals to create phony web pages and sites in order to mislead users into giving over personal information such as login IDs and passwords.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_17",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following is the hacking approach where cyber-criminals design fake websites or pages for tricking or gaining additional traffic?\n\na) Pharming\n\nb) Website-Duplication\n\nc) Mimicking\n\nd) Spamming\n\n\nView Answer",
+        "options": [
+            "MiTM",
+            "Injecting Trojans to a target victim",
+            "Credit card details leak in the deep web",
+            "Phishing"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nPeer-to-peer includes phishing, as well as the distribution of Trojans and worms to individuals. The leakage of a huge number of people’s credit card data on the deep web, on the other hand, is classified as a computer-as-weapon cyber-crime.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_18",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following is not a type of peer-to-peer cyber-crime?\n\na) MiTM\n\nb) Injecting Trojans to a target victim\n\nc) Credit card details leak in the deep web\n\nd) Phishing\n\n\nView Answer",
+        "options": [
+            "Clickjacking",
+            "Buffer-overflow",
+            "Phishing",
+            "MiTM"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nThe excess data that contains certain specific instructions in the memory for actions are projected by a cyber-criminal or penetration tester to break the system in a buffer-overflow attack.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_19",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "A cyber-criminal or penetration tester uses the additional data that stores certain special instructions in the memory for activities to break the system in which of the following attack?\n\na) Clickjacking\n\nb) Buffer-overflow\n\nc) Phishing\n\nd) MiTM\n\n\nView Answer",
+        "options": [
+            "ip tracker",
+            "emails",
+            "websites",
+            "web pages"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nEnumeration by cyber-attackers is also feasible via websites since attackers target websites in order to obtain the victim’s or target user’s IP address.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_20",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following do Cyber attackers commonly target for fetching IP address of a target or victim user?\n\na) ip tracker\n\nb) emails\n\nc) websites\n\nd) web pages\n\n\nView Answer",
+        "options": [
+            "Digital crime",
+            "Threats",
+            "System hijacking",
+            "Cyber Attack"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nExtortion, identity theft, email hacking, digital surveillance, stealing hardware, mobile hacking, and physical security breaches are all examples of cyber assaults or activities.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_21",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following is defined as an attempt to harm, damage or cause threat to a system or network?\n\na) Digital crime\n\nb) Threats\n\nc) System hijacking\n\nd) Cyber Attack\n\n\nView Answer",
+        "options": [
+            "White Hat Hackers",
+            "Black Hat Hackers",
+            "Hactivists",
+            "Gray Hat Hackers"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nBlack Hat hackers, often known as “crackers,” are a sort of cyber crime that gain illegal access to a user’s account or system in order to steal confidential data or introduce malware into the system for personal gain or to harm the company.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_22",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "They are nefarious hackers, and their main motive is to gain financial profit by doing cyber crimes. Who are “they” referred to here?\n\na) White Hat Hackers\n\nb) Black Hat Hackers\n\nc) Hactivists\n\nd) Gray Hat Hackers\n\n\nView Answer",
+        "options": [
+            "Software Security Specialist",
+            "CEO of the organization",
+            "Security Auditor",
+            "IT Security Engineer"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nThis is a position in a company or organisation where an individual develops and maintains different systems and security tools for the company or organisation to which he or she belongs.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_23",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "IT security in any firm or organization is maintained and handled by ____________________\n\na) Software Security Specialist\n\nb) CEO of the organization\n\nc) Security Auditor\n\nd) IT Security Engineer\n\n\nView Answer",
+        "options": [
+            "MIT",
+            "New York University",
+            "Harvard University",
+            "Bell’s Lab"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nThe term “hacker” was coined at MIT (Massachusetts Institute of Technology) because individuals and highly competent professionals use computer languages to address various challenges. In this context, labels such as geeks and nerds have been coined.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_24",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Where did the term “hacker” originate?\n\na) MIT\n\nb) New York University\n\nc) Harvard University\n\nd) Bell’s Lab\n\n\nView Answer",
+        "options": [
+            "Attack",
+            "Exploit",
+            "Vulnerability",
+            "Threat"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nVulnerability is a term that refers to a weakness in a network or system that an attacker may exploit. Exploiting a weakness in security might have unintended and undesirable consequences.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "network_models_for_security_mcq_25",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "What is the existence of weakness in a system or network is known as?\n\na) Attack\n\nb) Exploit\n\nc) Vulnerability\n\nd) Threat\n\n\nView Answer",
+        "options": [
+            "MiTM attack",
+            "Phishing attack",
+            "Website attack",
+            "DoS attack"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nPhishing is a type of cybercrime in which a person is digitally persuaded to disclose private information. Phishing comes in a variety of forms. Some of them employ malware and emails to divert users to various websites.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_26",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following is an internet scam done by cyber-criminals where the user is convinced digitally to provide confidential information.\n\na) MiTM attack\n\nb) Phishing attack\n\nc) Website attack\n\nd) DoS attack\n\n\nView Answer",
+        "options": [
+            "Exfiltration",
+            "Research and info-gathering",
+            "Attack the system",
+            "Fixing the bugs"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nDuring a hack, cyber-criminals first do research on the target, gathering data about the victim’s system and network. Then go ahead and attack. Once the attacker has gained access, he or she takes sensitive information.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_27",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following is not a step followed by cyber-criminals in data breaching?\n\na) Exfiltration\n\nb) Research and info-gathering\n\nc) Attack the system\n\nd) Fixing the bugs\n\n\nView Answer",
+        "options": [
+            "Browsing data",
+            "Instant messaging",
+            "Login using ID",
+            "Relay chats"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nLogin using ID will obviously take your ID in order to access your account and is not the headache of Tor. Privacy regarding instant messaging, browsing data, relay chats are some of the following online services protected by Tor.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_28",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following online service’s privacy cannot be protected using Tor?\n\na) Browsing data\n\nb) Instant messaging\n\nc) Login using ID\n\nd) Relay chats\n\n\nView Answer",
+        "options": [
+            "Yellow Hat hackers",
+            "Grey Hat hackers",
+            "Red Hat Hackers",
+            "White-Black Hat Hackers"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nGrey Hat Hackers are a hybrid of ethical and unethical hacker personalities. They hack other people’s computers for fun, but they don’t hurt them, and they exploit network faults and vulnerabilities without the admin or owner’s awareness.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_29",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following term refers to a group of hackers who are both white and black hat?\n\na) Yellow Hat hackers\n\nb) Grey Hat hackers\n\nc) Red Hat Hackers\n\nd) White-Black Hat Hackers\n\n\nView Answer",
+        "options": [
+            "Mail Password",
+            "Email Finder Pro",
+            "Mail PassView",
+            "Sendinc"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nSendinc is not a tool that compromises email data. It is used to protect business email accounts and provides a fast web-based solution for businesses to start delivering secure emails. The other three are email hacking tools.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_30",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following is not an email-related hacking tool?\n\na) Mail Password\n\nb) Email Finder Pro\n\nc) Mail PassView\n\nd) Sendinc\n\n\nView Answer",
+        "options": [
+            "botnets",
+            "programs",
+            "virus",
+            "worms"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nBotnets on infected mobile devices are waiting for orders from their owners. It starts a DDoS flood attack after receiving the owner’s instructions. As a result, calls are not connected or data is not sent.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "network_models_for_security_mcq_31",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following DDoS in mobile systems wait for the owner to trigger the cyber attack?\n\na) botnets\n\nb) programs\n\nc) virus\n\nd) worms\n\n\nView Answer",
+        "options": [
+            "WPA3",
+            "WPA2",
+            "WPA",
+            "WEP"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nWireless security is an important aspect of cyber-security. Wired Equivalent Privacy (WEP), Wi-Fi Protected Access (WPA), WPA2, and WPA3 are the most common kinds of wireless security. WEP is a famously insecure encryption protocol.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "network_models_for_security_mcq_32",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following is the least strong security encryption standard?\n\na) WPA3\n\nb) WPA2\n\nc) WPA\n\nd) WEP\n\n\nView Answer",
+        "options": [
+            "Trojan",
+            "Antivirus",
+            "Worm",
+            "Virus"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nStuxnet is a popular and powerful worm that came into existence in mid 2010, which was very powerful as it was accountable for the cause of huge damage to Iran’s Nuclear program. It mainly targets the PLCs (Programmable Logic Controllers) in a system.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "network_models_for_security_mcq_33",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following is a Stuxnet?\n\na) Trojan\n\nb) Antivirus\n\nc) Worm\n\nd) Virus\n\n\nView Answer",
+        "options": [
+            "Operating System fingerprinting",
+            "Operating System penetration testing",
+            "Digital-printing",
+            "Machine printing"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nOS fingerprinting is an ethical hacking technique used for determining what operating system (OS) is running on a remote computer. OS Fingerprinting is the practice of examining data packets that come from a network in order to extract intelligence that may be utilized in future assaults.",
+        "source": "sanfoundry",
+        "difficulty": "easy"
+    },
+    {
+        "id": "network_models_for_security_mcq_34",
+        "subject": "Cyber Security",
+        "topic": "Network Models for Security",
+        "type": "mcq",
+        "question": "Which of the following ethical hacking technique is used for determining which operating system (OS) is running on a remote computer?\n\na) Operating System fingerprinting\n\nb) Operating System penetration testing\n\nc) Digital-printing\n\nd) Machine printing\n\n\nView Answer",
+        "options": [
+            "Steganography",
+            "Chorography",
+            "Cryptography",
+            "Authentication"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nOrdinary files are targeted by hackers or other cyber criminals in order to disguise distinct data or information within another data file. You can reduce the risk of data leaking by employing steganography.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_1",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "What is Cyber Security?\n\na) Cyber Security provides security against malware\n\nb) Cyber Security provides security against cyber-terrorists\n\nc) Cyber Security protects a system from cyber attacks\n\nd) All of the mentioned\n\n\nView Answer",
+        "options": [
+            "Cyber security protects criminals",
+            "Cyber security protects internet-connected systems",
+            "Cyber security protects hackers",
+            "None of the mentioned"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nIt protects internet-connected systems such as hardware, software, and data from cyber-attacks. It aims to reduce cyber attacks against the system, network, and technologies by reducing unauthorized exploitation, vulnerability, and threats.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_2",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "What does cyber security protect?\n\na) Cyber security protects criminals\n\nb) Cyber security protects internet-connected systems\n\nc) Cyber security protects hackers\n\nd) None of the mentioned\n\n\nView Answer",
+        "options": [
+            "August Kerckhoffs",
+            "Bob Thomas",
+            "Robert",
+            "Charles"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nAugust Kerckhoffs, a linguist and German professor at HEC, wrote an essay in the Journal of Military Science in February 1883. Kerckhoff had unwittingly established the foundations for contemporary encryption, earning him the title of “Father of Computer Security.”",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_3",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Who is the father of computer security?\n\na) August Kerckhoffs\n\nb) Bob Thomas\n\nc) Robert\n\nd) Charles\n\n\nView Answer",
+        "options": [
+            "Cyber attack",
+            "Computer security",
+            "Cryptography",
+            "Digital hacking"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nAn effort to steal, spy on, damage, or destroy diverse components of cyberspace, such as computer systems, related peripherals, network systems, and information, is known as a cyber attack.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_4",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following is defined as an attempt to steal, spy, damage or destroy computer systems, networks, or their associated information?\n\na) Cyber attack\n\nb) Computer security\n\nc) Cryptography\n\nd) Digital hacking\n\n\nView Answer",
+        "options": [
+            "Cloud Security",
+            "Network Security",
+            "Application Security",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer:d\nSince technology is improving, the threat and attacks against the technology are also increasing. Hence, to provide security, it is divided into the following types:\nCloud Security: Provides security for the data stored on the cloud.\nNetwork Security: Protects the internal network from threats.\nApplication Security: Protects data stored in the application software.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_5",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following is a type of cyber security?\n\na) Cloud Security\n\nb) Network Security\n\nc) Application Security\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Compliance",
+            "Defense against internal threats",
+            "Threat Prevention",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nThe features are as follows:\nCompliance: Creating a program that meets the requirements and rules of the users.\nDefense against internal threats: Should provide security against internal exploitation.\nThreat Prevention: Should be capable of detecting the threat and preventing them.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_6",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "What are the features of cyber security?\n\na) Compliance\n\nb) Defense against internal threats\n\nc) Threat Prevention\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Confidentiality",
+            "Integrity",
+            "Availability",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nThe objectives of network security are Confidentiality, Integrity, and Availability.\nConfidentiality: The function of confidentiality is to keep sensitive company information safe from unwanted access. The confidentiality component of network security ensures that data is only accessible to those who are authorized to see it.\nIntegrity: This goal entails ensuring and preserving data accuracy and consistency. The purpose of integrity is to ensure that data is accurate and not tampered with by unauthorized individuals.\nAvailability: The purpose of availability in Network Security is to ensure that data, network resources, and services are always available to legitimate users, whenever they need them.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_7",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following is an objective of network security?\n\na) Confidentiality\n\nb) Integrity\n\nc) Availability\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Denial of Service",
+            "Man in the Middle",
+            "Malware",
+            "AES"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nDenial of Service, Man in the Middle, and Malware exploit the system causing a threat to security, hence they are considered as cybercrime. AES (Advanced Encryption Standard) provides security by encrypting the data.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_8",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following is not a cybercrime?\n\na) Denial of Service\n\nb) Man in the Middle\n\nc) Malware\n\nd) AES\n\n\nView Answer",
+        "options": [
+            "Internet Of Things",
+            "AI",
+            "Database",
+            "Attacks"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nThe Internet of Things (IoT) is a network of physical objects embedded with sensors, software, and other technologies to connect and exchange data with other devices and systems through the internet.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_9",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following is a component of cyber security?\n\na) Internet Of Things\n\nb) AI\n\nc) Database\n\nd) Attacks\n\n\nView Answer",
+        "options": [
+            "Phishing",
+            "SQL Injections",
+            "Password Attack",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nAttacks are Phishing, SQL Injections, and Password Attack.\nPhishing: The attacker sends a large number of fraudulent emails and gains access to the system.\nSQL Injections: The attacker gains access to the protected information by adding malicious code to the SQL server.\nPassword Attack: Attackers gain access to the passwords unethically and gain access to the confidential data.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_10",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following is a type of cyber attack?\n\na) Phishing\n\nb) SQL Injections\n\nc) Password Attack\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Makes the system slower",
+            "Minimizes computer freezing and crashes",
+            "Gives privacy to users",
+            "Protects system against viruses"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nThe advantages are minimization of computer freezing and crashes, user privacy, and protection against viruses, worms, etc. Disadvantages include the system becoming slow, configuring firewalls correctly can be difficult, need to update the new software in order to keep security up to date.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_11",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following is not an advantage of cyber security?\n\na) Makes the system slower\n\nb) Minimizes computer freezing and crashes\n\nc) Gives privacy to users\n\nd) Protects system against viruses\n\n\nView Answer",
+        "options": [
+            "Richard Stallman",
+            "William Gibson",
+            "Andrew Tannenbaum",
+            "Scott Fahlman"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nWilliam Gibson, an American-Canadian fiction pioneer, and coiner, examined the many streams of technology and invented the word “cyberspace” in 1821. The phrase refers to linked technologies that aid in information exchange, interaction with digital devices, storage and digital entertainment, computer and network security, and other information technology-related matters.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_12",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "“Cyberspace” was coined by _________\n\na) Richard Stallman\n\nb) William Gibson\n\nc) Andrew Tannenbaum\n\nd) Scott Fahlman\n\n\nView Answer",
+        "options": [
+            "1991",
+            "1983",
+            "1970",
+            "1964"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nIn the case of hackers in the 1970s, hackers and cyber thieves found out how wired technologies operate and how they might be abused to obtain a competitive edge or misuse the technology.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_13",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "In which year has hacking become a practical crime and a matter of concern in the field of cyber technology?\n\na) 1991\n\nb) 1983\n\nc) 1970\n\nd) 1964\n\n\nView Answer",
+        "options": [
+            "Nation / State sponsored hackers",
+            "CIA triad",
+            "Special Hackers",
+            "Government Hackers"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nNation / State-sponsored hackers are those who are engaged or paid by a nation’s or state’s government to safeguard the country from cyber terrorists and other groups or individuals, as well as to expose their plans, communications, and activities.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_14",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Governments hired some highly skilled hackers for providing cyber security for the country or state. These types of hackers are termed as _______\n\na) Nation / State sponsored hackers\n\nb) CIA triad\n\nc) Special Hackers\n\nd) Government Hackers\n\n\nView Answer",
+        "options": [
+            "Exploit",
+            "Attack",
+            "Threat",
+            "Vulnerability"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nA threat is a possible danger that might lead to a security breach and cause harm to the system or network. Vulnerability is a word that refers to a flaw in a network or system that might be exploited by an attacker. Exploiting a security flaw might result in unexpected and unwanted effects. A cyber-attack is an attempt by attackers to alter, delete, steal or expose any specific data by gaining unauthorized access.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_15",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following act violates cyber security?\n\na) Exploit\n\nb) Attack\n\nc) Threat\n\nd) Vulnerability\n\n\nView Answer",
+        "options": [
+            "Vulnerability",
+            "Attack",
+            "Threat",
+            "Exploit"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nA threat is defined as a potential hazard that might result in a breach of security and cause harm to the system or network. Vulnerability is a term that refers to a weakness in a network or system that an attacker may exploit. Exploiting a weakness in security might have unintended and undesirable consequences.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_16",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following actions compromise cyber security?\n\na) Vulnerability\n\nb) Attack\n\nc) Threat\n\nd) Exploit\n\n\nView Answer",
+        "options": [
+            "Pharming",
+            "Website-Duplication",
+            "Mimicking",
+            "Spamming"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nPharming is a strategy and approach used by cybercriminals to create phony web pages and sites in order to mislead users into giving over personal information such as login IDs and passwords.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_17",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following is the hacking approach where cyber-criminals design fake websites or pages for tricking or gaining additional traffic?\n\na) Pharming\n\nb) Website-Duplication\n\nc) Mimicking\n\nd) Spamming\n\n\nView Answer",
+        "options": [
+            "MiTM",
+            "Injecting Trojans to a target victim",
+            "Credit card details leak in the deep web",
+            "Phishing"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nPeer-to-peer includes phishing, as well as the distribution of Trojans and worms to individuals. The leakage of a huge number of people’s credit card data on the deep web, on the other hand, is classified as a computer-as-weapon cyber-crime.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_18",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following is not a type of peer-to-peer cyber-crime?\n\na) MiTM\n\nb) Injecting Trojans to a target victim\n\nc) Credit card details leak in the deep web\n\nd) Phishing\n\n\nView Answer",
+        "options": [
+            "Clickjacking",
+            "Buffer-overflow",
+            "Phishing",
+            "MiTM"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nThe excess data that contains certain specific instructions in the memory for actions are projected by a cyber-criminal or penetration tester to break the system in a buffer-overflow attack.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_19",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "A cyber-criminal or penetration tester uses the additional data that stores certain special instructions in the memory for activities to break the system in which of the following attack?\n\na) Clickjacking\n\nb) Buffer-overflow\n\nc) Phishing\n\nd) MiTM\n\n\nView Answer",
+        "options": [
+            "ip tracker",
+            "emails",
+            "websites",
+            "web pages"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nEnumeration by cyber-attackers is also feasible via websites since attackers target websites in order to obtain the victim’s or target user’s IP address.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_20",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following do Cyber attackers commonly target for fetching IP address of a target or victim user?\n\na) ip tracker\n\nb) emails\n\nc) websites\n\nd) web pages\n\n\nView Answer",
+        "options": [
+            "Digital crime",
+            "Threats",
+            "System hijacking",
+            "Cyber Attack"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nExtortion, identity theft, email hacking, digital surveillance, stealing hardware, mobile hacking, and physical security breaches are all examples of cyber assaults or activities.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_21",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following is defined as an attempt to harm, damage or cause threat to a system or network?\n\na) Digital crime\n\nb) Threats\n\nc) System hijacking\n\nd) Cyber Attack\n\n\nView Answer",
+        "options": [
+            "White Hat Hackers",
+            "Black Hat Hackers",
+            "Hactivists",
+            "Gray Hat Hackers"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nBlack Hat hackers, often known as “crackers,” are a sort of cyber crime that gain illegal access to a user’s account or system in order to steal confidential data or introduce malware into the system for personal gain or to harm the company.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_22",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "They are nefarious hackers, and their main motive is to gain financial profit by doing cyber crimes. Who are “they” referred to here?\n\na) White Hat Hackers\n\nb) Black Hat Hackers\n\nc) Hactivists\n\nd) Gray Hat Hackers\n\n\nView Answer",
+        "options": [
+            "Software Security Specialist",
+            "CEO of the organization",
+            "Security Auditor",
+            "IT Security Engineer"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nThis is a position in a company or organisation where an individual develops and maintains different systems and security tools for the company or organisation to which he or she belongs.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_23",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "IT security in any firm or organization is maintained and handled by ____________________\n\na) Software Security Specialist\n\nb) CEO of the organization\n\nc) Security Auditor\n\nd) IT Security Engineer\n\n\nView Answer",
+        "options": [
+            "MIT",
+            "New York University",
+            "Harvard University",
+            "Bell’s Lab"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nThe term “hacker” was coined at MIT (Massachusetts Institute of Technology) because individuals and highly competent professionals use computer languages to address various challenges. In this context, labels such as geeks and nerds have been coined.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_24",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Where did the term “hacker” originate?\n\na) MIT\n\nb) New York University\n\nc) Harvard University\n\nd) Bell’s Lab\n\n\nView Answer",
+        "options": [
+            "Attack",
+            "Exploit",
+            "Vulnerability",
+            "Threat"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nVulnerability is a term that refers to a weakness in a network or system that an attacker may exploit. Exploiting a weakness in security might have unintended and undesirable consequences.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_25",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "What is the existence of weakness in a system or network is known as?\n\na) Attack\n\nb) Exploit\n\nc) Vulnerability\n\nd) Threat\n\n\nView Answer",
+        "options": [
+            "MiTM attack",
+            "Phishing attack",
+            "Website attack",
+            "DoS attack"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nPhishing is a type of cybercrime in which a person is digitally persuaded to disclose private information. Phishing comes in a variety of forms. Some of them employ malware and emails to divert users to various websites.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_26",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following is an internet scam done by cyber-criminals where the user is convinced digitally to provide confidential information.\n\na) MiTM attack\n\nb) Phishing attack\n\nc) Website attack\n\nd) DoS attack\n\n\nView Answer",
+        "options": [
+            "Exfiltration",
+            "Research and info-gathering",
+            "Attack the system",
+            "Fixing the bugs"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nDuring a hack, cyber-criminals first do research on the target, gathering data about the victim’s system and network. Then go ahead and attack. Once the attacker has gained access, he or she takes sensitive information.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_27",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following is not a step followed by cyber-criminals in data breaching?\n\na) Exfiltration\n\nb) Research and info-gathering\n\nc) Attack the system\n\nd) Fixing the bugs\n\n\nView Answer",
+        "options": [
+            "Browsing data",
+            "Instant messaging",
+            "Login using ID",
+            "Relay chats"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nLogin using ID will obviously take your ID in order to access your account and is not the headache of Tor. Privacy regarding instant messaging, browsing data, relay chats are some of the following online services protected by Tor.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_28",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following online service’s privacy cannot be protected using Tor?\n\na) Browsing data\n\nb) Instant messaging\n\nc) Login using ID\n\nd) Relay chats\n\n\nView Answer",
+        "options": [
+            "Yellow Hat hackers",
+            "Grey Hat hackers",
+            "Red Hat Hackers",
+            "White-Black Hat Hackers"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nGrey Hat Hackers are a hybrid of ethical and unethical hacker personalities. They hack other people’s computers for fun, but they don’t hurt them, and they exploit network faults and vulnerabilities without the admin or owner’s awareness.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_29",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following term refers to a group of hackers who are both white and black hat?\n\na) Yellow Hat hackers\n\nb) Grey Hat hackers\n\nc) Red Hat Hackers\n\nd) White-Black Hat Hackers\n\n\nView Answer",
+        "options": [
+            "Mail Password",
+            "Email Finder Pro",
+            "Mail PassView",
+            "Sendinc"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nSendinc is not a tool that compromises email data. It is used to protect business email accounts and provides a fast web-based solution for businesses to start delivering secure emails. The other three are email hacking tools.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_30",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following is not an email-related hacking tool?\n\na) Mail Password\n\nb) Email Finder Pro\n\nc) Mail PassView\n\nd) Sendinc\n\n\nView Answer",
+        "options": [
+            "botnets",
+            "programs",
+            "virus",
+            "worms"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nBotnets on infected mobile devices are waiting for orders from their owners. It starts a DDoS flood attack after receiving the owner’s instructions. As a result, calls are not connected or data is not sent.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_31",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following DDoS in mobile systems wait for the owner to trigger the cyber attack?\n\na) botnets\n\nb) programs\n\nc) virus\n\nd) worms\n\n\nView Answer",
+        "options": [
+            "WPA3",
+            "WPA2",
+            "WPA",
+            "WEP"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nWireless security is an important aspect of cyber-security. Wired Equivalent Privacy (WEP), Wi-Fi Protected Access (WPA), WPA2, and WPA3 are the most common kinds of wireless security. WEP is a famously insecure encryption protocol.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_32",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following is the least strong security encryption standard?\n\na) WPA3\n\nb) WPA2\n\nc) WPA\n\nd) WEP\n\n\nView Answer",
+        "options": [
+            "Trojan",
+            "Antivirus",
+            "Worm",
+            "Virus"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nStuxnet is a popular and powerful worm that came into existence in mid 2010, which was very powerful as it was accountable for the cause of huge damage to Iran’s Nuclear program. It mainly targets the PLCs (Programmable Logic Controllers) in a system.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_33",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following is a Stuxnet?\n\na) Trojan\n\nb) Antivirus\n\nc) Worm\n\nd) Virus\n\n\nView Answer",
+        "options": [
+            "Operating System fingerprinting",
+            "Operating System penetration testing",
+            "Digital-printing",
+            "Machine printing"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nOS fingerprinting is an ethical hacking technique used for determining what operating system (OS) is running on a remote computer. OS Fingerprinting is the practice of examining data packets that come from a network in order to extract intelligence that may be utilized in future assaults.",
+        "source": "sanfoundry",
+        "difficulty": "easy"
+    },
+    {
+        "id": "understanding_attack_vectors_mcq_34",
+        "subject": "Cyber Security",
+        "topic": "Attack Vectors",
+        "type": "mcq",
+        "question": "Which of the following ethical hacking technique is used for determining which operating system (OS) is running on a remote computer?\n\na) Operating System fingerprinting\n\nb) Operating System penetration testing\n\nc) Digital-printing\n\nd) Machine printing\n\n\nView Answer",
+        "options": [
+            "Steganography",
+            "Chorography",
+            "Cryptography",
+            "Authentication"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nOrdinary files are targeted by hackers or other cyber criminals in order to disguise distinct data or information within another data file. You can reduce the risk of data leaking by employing steganography.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_1",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "What is Cyber Security?\n\na) Cyber Security provides security against malware\n\nb) Cyber Security provides security against cyber-terrorists\n\nc) Cyber Security protects a system from cyber attacks\n\nd) All of the mentioned\n\n\nView Answer",
+        "options": [
+            "Cyber security protects criminals",
+            "Cyber security protects internet-connected systems",
+            "Cyber security protects hackers",
+            "None of the mentioned"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nIt protects internet-connected systems such as hardware, software, and data from cyber-attacks. It aims to reduce cyber attacks against the system, network, and technologies by reducing unauthorized exploitation, vulnerability, and threats.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_2",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "What does cyber security protect?\n\na) Cyber security protects criminals\n\nb) Cyber security protects internet-connected systems\n\nc) Cyber security protects hackers\n\nd) None of the mentioned\n\n\nView Answer",
+        "options": [
+            "August Kerckhoffs",
+            "Bob Thomas",
+            "Robert",
+            "Charles"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nAugust Kerckhoffs, a linguist and German professor at HEC, wrote an essay in the Journal of Military Science in February 1883. Kerckhoff had unwittingly established the foundations for contemporary encryption, earning him the title of “Father of Computer Security.”",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_3",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Who is the father of computer security?\n\na) August Kerckhoffs\n\nb) Bob Thomas\n\nc) Robert\n\nd) Charles\n\n\nView Answer",
+        "options": [
+            "Cyber attack",
+            "Computer security",
+            "Cryptography",
+            "Digital hacking"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nAn effort to steal, spy on, damage, or destroy diverse components of cyberspace, such as computer systems, related peripherals, network systems, and information, is known as a cyber attack.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cryptography_in_security_mcq_4",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following is defined as an attempt to steal, spy, damage or destroy computer systems, networks, or their associated information?\n\na) Cyber attack\n\nb) Computer security\n\nc) Cryptography\n\nd) Digital hacking\n\n\nView Answer",
+        "options": [
+            "Cloud Security",
+            "Network Security",
+            "Application Security",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer:d\nSince technology is improving, the threat and attacks against the technology are also increasing. Hence, to provide security, it is divided into the following types:\nCloud Security: Provides security for the data stored on the cloud.\nNetwork Security: Protects the internal network from threats.\nApplication Security: Protects data stored in the application software.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_5",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following is a type of cyber security?\n\na) Cloud Security\n\nb) Network Security\n\nc) Application Security\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Compliance",
+            "Defense against internal threats",
+            "Threat Prevention",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nThe features are as follows:\nCompliance: Creating a program that meets the requirements and rules of the users.\nDefense against internal threats: Should provide security against internal exploitation.\nThreat Prevention: Should be capable of detecting the threat and preventing them.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_6",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "What are the features of cyber security?\n\na) Compliance\n\nb) Defense against internal threats\n\nc) Threat Prevention\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Confidentiality",
+            "Integrity",
+            "Availability",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nThe objectives of network security are Confidentiality, Integrity, and Availability.\nConfidentiality: The function of confidentiality is to keep sensitive company information safe from unwanted access. The confidentiality component of network security ensures that data is only accessible to those who are authorized to see it.\nIntegrity: This goal entails ensuring and preserving data accuracy and consistency. The purpose of integrity is to ensure that data is accurate and not tampered with by unauthorized individuals.\nAvailability: The purpose of availability in Network Security is to ensure that data, network resources, and services are always available to legitimate users, whenever they need them.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cryptography_in_security_mcq_7",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following is an objective of network security?\n\na) Confidentiality\n\nb) Integrity\n\nc) Availability\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Denial of Service",
+            "Man in the Middle",
+            "Malware",
+            "AES"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nDenial of Service, Man in the Middle, and Malware exploit the system causing a threat to security, hence they are considered as cybercrime. AES (Advanced Encryption Standard) provides security by encrypting the data.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cryptography_in_security_mcq_8",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following is not a cybercrime?\n\na) Denial of Service\n\nb) Man in the Middle\n\nc) Malware\n\nd) AES\n\n\nView Answer",
+        "options": [
+            "Internet Of Things",
+            "AI",
+            "Database",
+            "Attacks"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nThe Internet of Things (IoT) is a network of physical objects embedded with sensors, software, and other technologies to connect and exchange data with other devices and systems through the internet.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cryptography_in_security_mcq_9",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following is a component of cyber security?\n\na) Internet Of Things\n\nb) AI\n\nc) Database\n\nd) Attacks\n\n\nView Answer",
+        "options": [
+            "Phishing",
+            "SQL Injections",
+            "Password Attack",
+            "All of the above"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nAttacks are Phishing, SQL Injections, and Password Attack.\nPhishing: The attacker sends a large number of fraudulent emails and gains access to the system.\nSQL Injections: The attacker gains access to the protected information by adding malicious code to the SQL server.\nPassword Attack: Attackers gain access to the passwords unethically and gain access to the confidential data.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cryptography_in_security_mcq_10",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following is a type of cyber attack?\n\na) Phishing\n\nb) SQL Injections\n\nc) Password Attack\n\nd) All of the above\n\n\nView Answer",
+        "options": [
+            "Makes the system slower",
+            "Minimizes computer freezing and crashes",
+            "Gives privacy to users",
+            "Protects system against viruses"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nThe advantages are minimization of computer freezing and crashes, user privacy, and protection against viruses, worms, etc. Disadvantages include the system becoming slow, configuring firewalls correctly can be difficult, need to update the new software in order to keep security up to date.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cryptography_in_security_mcq_11",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following is not an advantage of cyber security?\n\na) Makes the system slower\n\nb) Minimizes computer freezing and crashes\n\nc) Gives privacy to users\n\nd) Protects system against viruses\n\n\nView Answer",
+        "options": [
+            "Richard Stallman",
+            "William Gibson",
+            "Andrew Tannenbaum",
+            "Scott Fahlman"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nWilliam Gibson, an American-Canadian fiction pioneer, and coiner, examined the many streams of technology and invented the word “cyberspace” in 1821. The phrase refers to linked technologies that aid in information exchange, interaction with digital devices, storage and digital entertainment, computer and network security, and other information technology-related matters.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_12",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "“Cyberspace” was coined by _________\n\na) Richard Stallman\n\nb) William Gibson\n\nc) Andrew Tannenbaum\n\nd) Scott Fahlman\n\n\nView Answer",
+        "options": [
+            "1991",
+            "1983",
+            "1970",
+            "1964"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nIn the case of hackers in the 1970s, hackers and cyber thieves found out how wired technologies operate and how they might be abused to obtain a competitive edge or misuse the technology.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cryptography_in_security_mcq_13",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "In which year has hacking become a practical crime and a matter of concern in the field of cyber technology?\n\na) 1991\n\nb) 1983\n\nc) 1970\n\nd) 1964\n\n\nView Answer",
+        "options": [
+            "Nation / State sponsored hackers",
+            "CIA triad",
+            "Special Hackers",
+            "Government Hackers"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nNation / State-sponsored hackers are those who are engaged or paid by a nation’s or state’s government to safeguard the country from cyber terrorists and other groups or individuals, as well as to expose their plans, communications, and activities.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_14",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Governments hired some highly skilled hackers for providing cyber security for the country or state. These types of hackers are termed as _______\n\na) Nation / State sponsored hackers\n\nb) CIA triad\n\nc) Special Hackers\n\nd) Government Hackers\n\n\nView Answer",
+        "options": [
+            "Exploit",
+            "Attack",
+            "Threat",
+            "Vulnerability"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nA threat is a possible danger that might lead to a security breach and cause harm to the system or network. Vulnerability is a word that refers to a flaw in a network or system that might be exploited by an attacker. Exploiting a security flaw might result in unexpected and unwanted effects. A cyber-attack is an attempt by attackers to alter, delete, steal or expose any specific data by gaining unauthorized access.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_15",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following act violates cyber security?\n\na) Exploit\n\nb) Attack\n\nc) Threat\n\nd) Vulnerability\n\n\nView Answer",
+        "options": [
+            "Vulnerability",
+            "Attack",
+            "Threat",
+            "Exploit"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nA threat is defined as a potential hazard that might result in a breach of security and cause harm to the system or network. Vulnerability is a term that refers to a weakness in a network or system that an attacker may exploit. Exploiting a weakness in security might have unintended and undesirable consequences.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_16",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following actions compromise cyber security?\n\na) Vulnerability\n\nb) Attack\n\nc) Threat\n\nd) Exploit\n\n\nView Answer",
+        "options": [
+            "Pharming",
+            "Website-Duplication",
+            "Mimicking",
+            "Spamming"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nPharming is a strategy and approach used by cybercriminals to create phony web pages and sites in order to mislead users into giving over personal information such as login IDs and passwords.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_17",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following is the hacking approach where cyber-criminals design fake websites or pages for tricking or gaining additional traffic?\n\na) Pharming\n\nb) Website-Duplication\n\nc) Mimicking\n\nd) Spamming\n\n\nView Answer",
+        "options": [
+            "MiTM",
+            "Injecting Trojans to a target victim",
+            "Credit card details leak in the deep web",
+            "Phishing"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nPeer-to-peer includes phishing, as well as the distribution of Trojans and worms to individuals. The leakage of a huge number of people’s credit card data on the deep web, on the other hand, is classified as a computer-as-weapon cyber-crime.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_18",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following is not a type of peer-to-peer cyber-crime?\n\na) MiTM\n\nb) Injecting Trojans to a target victim\n\nc) Credit card details leak in the deep web\n\nd) Phishing\n\n\nView Answer",
+        "options": [
+            "Clickjacking",
+            "Buffer-overflow",
+            "Phishing",
+            "MiTM"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nThe excess data that contains certain specific instructions in the memory for actions are projected by a cyber-criminal or penetration tester to break the system in a buffer-overflow attack.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_19",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "A cyber-criminal or penetration tester uses the additional data that stores certain special instructions in the memory for activities to break the system in which of the following attack?\n\na) Clickjacking\n\nb) Buffer-overflow\n\nc) Phishing\n\nd) MiTM\n\n\nView Answer",
+        "options": [
+            "ip tracker",
+            "emails",
+            "websites",
+            "web pages"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nEnumeration by cyber-attackers is also feasible via websites since attackers target websites in order to obtain the victim’s or target user’s IP address.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_20",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following do Cyber attackers commonly target for fetching IP address of a target or victim user?\n\na) ip tracker\n\nb) emails\n\nc) websites\n\nd) web pages\n\n\nView Answer",
+        "options": [
+            "Digital crime",
+            "Threats",
+            "System hijacking",
+            "Cyber Attack"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nExtortion, identity theft, email hacking, digital surveillance, stealing hardware, mobile hacking, and physical security breaches are all examples of cyber assaults or activities.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_21",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following is defined as an attempt to harm, damage or cause threat to a system or network?\n\na) Digital crime\n\nb) Threats\n\nc) System hijacking\n\nd) Cyber Attack\n\n\nView Answer",
+        "options": [
+            "White Hat Hackers",
+            "Black Hat Hackers",
+            "Hactivists",
+            "Gray Hat Hackers"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nBlack Hat hackers, often known as “crackers,” are a sort of cyber crime that gain illegal access to a user’s account or system in order to steal confidential data or introduce malware into the system for personal gain or to harm the company.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_22",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "They are nefarious hackers, and their main motive is to gain financial profit by doing cyber crimes. Who are “they” referred to here?\n\na) White Hat Hackers\n\nb) Black Hat Hackers\n\nc) Hactivists\n\nd) Gray Hat Hackers\n\n\nView Answer",
+        "options": [
+            "Software Security Specialist",
+            "CEO of the organization",
+            "Security Auditor",
+            "IT Security Engineer"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nThis is a position in a company or organisation where an individual develops and maintains different systems and security tools for the company or organisation to which he or she belongs.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_23",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "IT security in any firm or organization is maintained and handled by ____________________\n\na) Software Security Specialist\n\nb) CEO of the organization\n\nc) Security Auditor\n\nd) IT Security Engineer\n\n\nView Answer",
+        "options": [
+            "MIT",
+            "New York University",
+            "Harvard University",
+            "Bell’s Lab"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nThe term “hacker” was coined at MIT (Massachusetts Institute of Technology) because individuals and highly competent professionals use computer languages to address various challenges. In this context, labels such as geeks and nerds have been coined.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_24",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Where did the term “hacker” originate?\n\na) MIT\n\nb) New York University\n\nc) Harvard University\n\nd) Bell’s Lab\n\n\nView Answer",
+        "options": [
+            "Attack",
+            "Exploit",
+            "Vulnerability",
+            "Threat"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nVulnerability is a term that refers to a weakness in a network or system that an attacker may exploit. Exploiting a weakness in security might have unintended and undesirable consequences.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cryptography_in_security_mcq_25",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "What is the existence of weakness in a system or network is known as?\n\na) Attack\n\nb) Exploit\n\nc) Vulnerability\n\nd) Threat\n\n\nView Answer",
+        "options": [
+            "MiTM attack",
+            "Phishing attack",
+            "Website attack",
+            "DoS attack"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nPhishing is a type of cybercrime in which a person is digitally persuaded to disclose private information. Phishing comes in a variety of forms. Some of them employ malware and emails to divert users to various websites.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_26",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following is an internet scam done by cyber-criminals where the user is convinced digitally to provide confidential information.\n\na) MiTM attack\n\nb) Phishing attack\n\nc) Website attack\n\nd) DoS attack\n\n\nView Answer",
+        "options": [
+            "Exfiltration",
+            "Research and info-gathering",
+            "Attack the system",
+            "Fixing the bugs"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nDuring a hack, cyber-criminals first do research on the target, gathering data about the victim’s system and network. Then go ahead and attack. Once the attacker has gained access, he or she takes sensitive information.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_27",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following is not a step followed by cyber-criminals in data breaching?\n\na) Exfiltration\n\nb) Research and info-gathering\n\nc) Attack the system\n\nd) Fixing the bugs\n\n\nView Answer",
+        "options": [
+            "Browsing data",
+            "Instant messaging",
+            "Login using ID",
+            "Relay chats"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nLogin using ID will obviously take your ID in order to access your account and is not the headache of Tor. Privacy regarding instant messaging, browsing data, relay chats are some of the following online services protected by Tor.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_28",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following online service’s privacy cannot be protected using Tor?\n\na) Browsing data\n\nb) Instant messaging\n\nc) Login using ID\n\nd) Relay chats\n\n\nView Answer",
+        "options": [
+            "Yellow Hat hackers",
+            "Grey Hat hackers",
+            "Red Hat Hackers",
+            "White-Black Hat Hackers"
+        ],
+        "correct_option_index": 1,
+        "explanation": "Answer: b\nGrey Hat Hackers are a hybrid of ethical and unethical hacker personalities. They hack other people’s computers for fun, but they don’t hurt them, and they exploit network faults and vulnerabilities without the admin or owner’s awareness.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_29",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following term refers to a group of hackers who are both white and black hat?\n\na) Yellow Hat hackers\n\nb) Grey Hat hackers\n\nc) Red Hat Hackers\n\nd) White-Black Hat Hackers\n\n\nView Answer",
+        "options": [
+            "Mail Password",
+            "Email Finder Pro",
+            "Mail PassView",
+            "Sendinc"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nSendinc is not a tool that compromises email data. It is used to protect business email accounts and provides a fast web-based solution for businesses to start delivering secure emails. The other three are email hacking tools.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_30",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following is not an email-related hacking tool?\n\na) Mail Password\n\nb) Email Finder Pro\n\nc) Mail PassView\n\nd) Sendinc\n\n\nView Answer",
+        "options": [
+            "botnets",
+            "programs",
+            "virus",
+            "worms"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nBotnets on infected mobile devices are waiting for orders from their owners. It starts a DDoS flood attack after receiving the owner’s instructions. As a result, calls are not connected or data is not sent.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cryptography_in_security_mcq_31",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following DDoS in mobile systems wait for the owner to trigger the cyber attack?\n\na) botnets\n\nb) programs\n\nc) virus\n\nd) worms\n\n\nView Answer",
+        "options": [
+            "WPA3",
+            "WPA2",
+            "WPA",
+            "WEP"
+        ],
+        "correct_option_index": 3,
+        "explanation": "Answer: d\nWireless security is an important aspect of cyber-security. Wired Equivalent Privacy (WEP), Wi-Fi Protected Access (WPA), WPA2, and WPA3 are the most common kinds of wireless security. WEP is a famously insecure encryption protocol.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    },
+    {
+        "id": "cryptography_in_security_mcq_32",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following is the least strong security encryption standard?\n\na) WPA3\n\nb) WPA2\n\nc) WPA\n\nd) WEP\n\n\nView Answer",
+        "options": [
+            "Trojan",
+            "Antivirus",
+            "Worm",
+            "Virus"
+        ],
+        "correct_option_index": 2,
+        "explanation": "Answer: c\nStuxnet is a popular and powerful worm that came into existence in mid 2010, which was very powerful as it was accountable for the cause of huge damage to Iran’s Nuclear program. It mainly targets the PLCs (Programmable Logic Controllers) in a system.",
+        "source": "sanfoundry",
+        "difficulty": "medium"
+    },
+    {
+        "id": "cryptography_in_security_mcq_33",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following is a Stuxnet?\n\na) Trojan\n\nb) Antivirus\n\nc) Worm\n\nd) Virus\n\n\nView Answer",
+        "options": [
+            "Operating System fingerprinting",
+            "Operating System penetration testing",
+            "Digital-printing",
+            "Machine printing"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nOS fingerprinting is an ethical hacking technique used for determining what operating system (OS) is running on a remote computer. OS Fingerprinting is the practice of examining data packets that come from a network in order to extract intelligence that may be utilized in future assaults.",
+        "source": "sanfoundry",
+        "difficulty": "easy"
+    },
+    {
+        "id": "cryptography_in_security_mcq_34",
+        "subject": "Cyber Security",
+        "topic": "Cryptography in Security",
+        "type": "mcq",
+        "question": "Which of the following ethical hacking technique is used for determining which operating system (OS) is running on a remote computer?\n\na) Operating System fingerprinting\n\nb) Operating System penetration testing\n\nc) Digital-printing\n\nd) Machine printing\n\n\nView Answer",
+        "options": [
+            "Steganography",
+            "Chorography",
+            "Cryptography",
+            "Authentication"
+        ],
+        "correct_option_index": 0,
+        "explanation": "Answer: a\nOrdinary files are targeted by hackers or other cyber criminals in order to disguise distinct data or information within another data file. You can reduce the risk of data leaking by employing steganography.",
+        "source": "sanfoundry",
+        "difficulty": "hard"
+    }
+]

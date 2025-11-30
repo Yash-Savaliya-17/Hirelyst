@@ -1,0 +1,9 @@
+numpy
+opencv-python-headless
+mediapipe
+flask
+werkzeug
+requests
+boto3
+python-dotenv
+hypercorn

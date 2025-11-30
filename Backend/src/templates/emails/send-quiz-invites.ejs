@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Invitation | <%= site_name %></title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 20px; background-color: #f4f4f4;">
+<div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px; border: 1px solid #e0e0e0; border-radius: 10px;">
+    <h2 style="text-align: center; color: #333;"><%= title %></h2>
+    <p>Hello,</p>
+    <p>You've been invited to participate in a quiz hosted by <%= site_name %>.</p>
+    <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0;">
+        <p style="margin: 5px 0;"><strong>Date:</strong> <%= startsAt.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }) %></p>
+        <p style="margin: 5px 0;"><strong>Start Time:</strong> <%= startsAt.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) %></p>
+        <p style="margin: 5px 0;"><strong>End Time:</strong> <%= endsAt.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) %></p>
+        <p style="margin: 5px 0;"><strong>Duration:</strong>
+            <%- formatDuration(duration) %>
+        </p>
+    </div>
+    <p>Are you ready to challenge yourself?</p>
+    <p>If you did not expect this invitation, please ignore this email.</p>
+    <p style="color: #888;">Thank you,<br><%= site_name %></p>
+    <div style="text-align: center; margin: 20px 0;">
+        <a href="<%= link %>" style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-size: 16px; display: inline-block;">Register for Quiz</a>
+    </div>
+</div>
+<%
+function formatDuration(ms) {
+    const minutes = Math.floor(ms / (1000 * 60));
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+
+    if (hours > 0) {
+        return hours + ' hour' + (hours > 1 ? 's' : '') +
+                (remainingMinutes > 0 ? ' ' + remainingMinutes + ' minute' + (remainingMinutes > 1 ? 's' : '') : '');
+    } else {
+        return minutes + ' minute' + (minutes > 1 ? 's' : '');
+    }
+}
+%>
+</body>
+</html>

@@ -1,0 +1,334 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+enum Rules {
+  KEYBOARD
+  WEBCAM
+}
+
+enum QuizStatus {
+  UNATTEMPTED
+  MARKED_FOR_REVIEW
+  SAVED_AND_MARKED_FOR_REVIEW
+  SAVED
+}
+
+model User {
+  sys_id        Int      @id @default(autoincrement())
+  name          String
+  email         String   @unique
+  password      String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  isVerified    Boolean  @default(false)
+  isPasswordSet Boolean  @default(false)
+  phone         String?
+  avatar        String?
+  address       String?
+  city          String?
+  state         String?
+
+  verificationToken  VerificationToken?
+  resetPasswordToken ResetPasswordToken?
+
+  questions                     Question[]
+  quizzes                       Quiz[]
+  quizScores                    QuizUserScore[]
+  quizAttendees                 QuizAttendee[]
+  userExperience                UserExperience[]
+  userEducation                 UserEducation[]
+  userSkills                    UserSkill[]
+  userCertifications            UserCertification[]
+  userProjects                  UserProject[]
+  userAchievements              UserAchievement[]
+  userInterviews                Interview[]
+  userInterviewQuestionAnalysis InterviewAnswerAnalysis[]
+}
+
+model Question {
+  sys_id        Int              @id @default(autoincrement())
+  question      String
+  answer        String
+  difficulty    Difficulty?      @default(EASY)
+  attachment    String?
+  topicId       Int
+  subjectId     Int
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+  createdById   Int
+  createBy      User             @relation(fields: [createdById], references: [sys_id])
+  topic         QuestionTopic    @relation(fields: [topicId], references: [sys_id])
+  subject       QuestionSubject  @relation(fields: [subjectId], references: [sys_id])
+  quizQuestions QuizQuestion[]
+  quizScores    QuizUserScore[]
+  options       QuestionOption[]
+}
+
+model QuestionOption {
+  sys_id     Int      @id @default(autoincrement())
+  option     String
+  isCorrect  Boolean
+  questionId Int
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  question   Question @relation(fields: [questionId], references: [sys_id])
+}
+
+model QuestionTopic {
+  sys_id    Int      @id @default(autoincrement())
+  name      String
+  subjectId Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  subject   QuestionSubject @relation(fields: [subjectId], references: [sys_id])
+  questions Question[]
+
+  @@unique([name, subjectId])
+}
+
+model QuestionSubject {
+  sys_id        Int             @id @default(autoincrement())
+  name          String          @unique
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  questionTopic QuestionTopic[]
+  questions     Question[]
+}
+
+model Quiz {
+  sys_id          Int             @id @default(autoincrement())
+  title           String
+  createdById     Int
+  startsAt        DateTime
+  endsAt          DateTime
+  duration        Int
+  ranksCalculated Boolean         @default(false)
+  rules           Rules[]         @default([KEYBOARD])
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  createdBy       User            @relation(fields: [createdById], references: [sys_id])
+  questions       QuizQuestion[]
+  scores          QuizUserScore[]
+  attendees       QuizAttendee[]
+}
+
+model QuizQuestion {
+  sys_id     Int @id @default(autoincrement())
+  quizId     Int
+  questionId Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  quiz       Quiz            @relation(fields: [quizId], references: [sys_id])
+  question   Question        @relation(fields: [questionId], references: [sys_id])
+  quizScores QuizUserScore[]
+
+  @@unique([quizId, questionId])
+}
+
+model QuizUserScore {
+  sys_id         Int        @id @default(autoincrement())
+  email          String
+  quizQuestionId Int
+  quizId         Int
+  questionId     Int
+  score          Int        @default(0)
+  status         QuizStatus @default(UNATTEMPTED)
+  response       String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  attendee     QuizAttendee @relation(fields: [quizId, email], references: [quizId, email])
+  quizQuestion QuizQuestion @relation(fields: [quizQuestionId], references: [sys_id])
+  user         User         @relation(fields: [email], references: [email])
+  quiz         Quiz         @relation(fields: [quizId], references: [sys_id])
+  question     Question     @relation(fields: [questionId], references: [sys_id])
+
+  @@unique([quizId, email, questionId])
+}
+
+model QuizAttendee {
+  quizId     Int
+  email      String
+  score      Int       @default(0)
+  attended   Boolean   @default(false)
+  registered Boolean   @default(false)
+  attendedAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  quiz          Quiz            @relation(fields: [quizId], references: [sys_id])
+  user          User?           @relation(fields: [email], references: [email], onDelete: Cascade)
+  quizResponses QuizUserScore[]
+
+  @@id([quizId, email])
+}
+
+model VerificationToken {
+  userId    Int      @unique
+  token     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  expiresAt DateTime
+  user      User     @relation(fields: [userId], references: [sys_id])
+}
+
+model ResetPasswordToken {
+  userId    Int      @unique
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [sys_id])
+}
+
+model UserExperience {
+  sys_id      Int       @id @default(autoincrement())
+  userId      Int
+  company     String
+  title       String
+  location    String
+  description String?
+  startDate   DateTime
+  endDate     DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  user User @relation(fields: [userId], references: [sys_id])
+}
+
+model UserEducation {
+  sys_id       Int       @id @default(autoincrement())
+  userId       Int
+  institution  String
+  degree       String
+  fieldOfStudy String
+  location     String
+  grade        String?
+  startDate    DateTime
+  endDate      DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  user User @relation(fields: [userId], references: [sys_id])
+}
+
+model UserSkill {
+  sys_id    Int      @id @default(autoincrement())
+  userId    Int
+  skill     String
+  level     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [sys_id])
+}
+
+model UserCertification {
+  sys_id        Int      @id @default(autoincrement())
+  userId        Int
+  name          String
+  authority     String
+  licenseNumber String
+  startDate     DateTime
+  endDate       DateTime
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [sys_id])
+}
+
+model UserProject {
+  sys_id       Int       @id @default(autoincrement())
+  userId       Int
+  title        String
+  description  String
+  startDate    DateTime
+  endDate      DateTime?
+  technologies String[]
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  user User @relation(fields: [userId], references: [sys_id])
+}
+
+model UserAchievement {
+  sys_id      Int      @id @default(autoincrement())
+  userId      Int
+  title       String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [sys_id])
+}
+
+model Interview {
+  sys_id      Int                 @id @default(autoincrement())
+  date        DateTime            @default(now())
+  domain      String
+  codomain    String
+  strength    String?
+  growthArea  String?
+  summary     String?
+  createdById Int
+  createdBy   User                @relation(fields: [createdById], references: [sys_id])
+  createdAt   DateTime            @default(now())
+  updatedAt   DateTime            @updatedAt
+  questions   InterviewQuestion[]
+}
+
+model InterviewAnswerAnalysis {
+  interviewQuestionId  Int      @id
+  userId               Int
+  clarityScore         Float
+  conciseness          Boolean
+  fillerWords          Json
+  poorSentenceStarters String[]
+  relevancyScore       Float?
+  repetition           Json
+  weaknesses           String[]
+  wordCount            Int
+  tone                 String
+  overallScore         Float
+  rating               String
+  strengths            String[]
+  suggestedAnswer      String
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  interviewQuestion InterviewQuestion @relation(fields: [interviewQuestionId], references: [sys_id])
+  user              User              @relation(fields: [userId], references: [sys_id])
+}
+
+model InterviewQuestion {
+  sys_id      Int       @id @default(autoincrement())
+  question    String
+  answer      String
+  user_answer String?
+  rating      Int?
+  s3Url       String?
+  interviewId Int
+  interview   Interview @relation(fields: [interviewId], references: [sys_id])
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  interviewAnswerAnalysis InterviewAnswerAnalysis[]
+}

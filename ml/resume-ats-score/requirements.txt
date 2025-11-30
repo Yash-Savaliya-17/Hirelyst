@@ -1,0 +1,10 @@
+streamlit
+PyPDF2
+google.generativeai
+python-dotenv
+groq
+plotly==5.18.0
+pandas==2.2.0
+flask
+werkzeug
+Hypercorn==0.17.3
