@@ -746,8 +746,10 @@ export class QuizService {
             return await Promise.all(questionPromises);
         });
 
-        // After saving to PostgreSQL, add to RAG vector store for future use
-        await this.addQuestionsToVectorStore(questions, subject, topic);
+        // Save to vector store in background (non-blocking)
+        this.addQuestionsToVectorStore(questions, subject, topic).catch(err => {
+            this.logger.warn(`⚠️ Background vector store save failed: ${err.message}`);
+        });
 
         return savedQuestions;
     }
@@ -783,7 +785,7 @@ export class QuizService {
                 },
                 {
                     headers: {"Content-Type": "application/json"},
-                    timeout: 60000 // 60 seconds - first time vector store build takes time
+                    timeout: 120000 // 120 seconds - first quiz builds vector stores (subsequent: <5s)
                 }
             );
 
