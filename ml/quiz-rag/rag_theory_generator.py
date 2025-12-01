@@ -10,13 +10,14 @@ from pathlib import Path
 
 
 class RAGTheoryGenerator:
-    def __init__(self, data_dir: str, collection_name: str = "theory_questions"):
+    def __init__(self, data_dir: str, collection_name: str = "theory_questions", persist_directory: str = "./chroma_db"):
         """
         Initialize RAG Theory Generator
         
         Args:
             data_dir: Directory containing theory JSON files
             collection_name: Name for ChromaDB collection
+            persist_directory: Directory for ChromaDB persistence
         """
         self.data_dir = Path(data_dir)
         self.collection_name = collection_name
@@ -32,13 +33,15 @@ class RAGTheoryGenerator:
         )
         
         # Initialize vector store
-        self.persist_directory = "./chroma_db"
+        self.persist_directory = persist_directory
         self.vectorstore = None
         self.retriever = None
+        self.all_theory = []
         
     def load_and_index_data(self):
         """Load theory data from JSON files and create vector store"""
         documents = []
+        self.all_theory = []
         
         # Load all JSON files from data directory
         for json_file in self.data_dir.glob("*.json"):
@@ -48,6 +51,7 @@ class RAGTheoryGenerator:
                     
                     # Handle both array and object structures
                     questions = data if isinstance(data, list) else data.get('questions', [])
+                    self.all_theory.extend(questions)
                     
                     for item in questions:
                         # Create document text from theory content
@@ -116,6 +120,21 @@ class RAGTheoryGenerator:
         docs = self.retriever.get_relevant_documents(query)
         
         return [doc.page_content for doc in docs[:k]]
+    
+    def build_vector_store(self, force_rebuild: bool = False):
+        """Build or load vector store"""
+        if not force_rebuild and self.vectorstore:
+            print("Vector store already initialized")
+            return
+        
+        self.load_and_index_data()
+        print(f"✅ Vector store built with {len(self.all_theory)} theory items")
+    
+    def retrieve_relevant_theory(self, topic: str = None, subtopic: str = None, difficulty: str = None, k: int = 5):
+        """Retrieve relevant theory (alias for retrieve_context)"""
+        return self.retriever.get_relevant_documents(
+            f"Topic: {topic or ''} Subtopic: {subtopic or ''} Difficulty: {difficulty or ''}"
+        ) if self.retriever else []
     
     def get_stats(self):
         """Get statistics about indexed data"""

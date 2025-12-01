@@ -42,32 +42,30 @@ class RetrievalResponse(BaseModel):
 
 @app.on_event("startup")
 async def startup_event():
-    """Initialize both RAG systems"""
+    """Initialize both RAG generators (lazy loading of vector stores)"""
     global mcq_generator, theory_generator
     
     print("🚀 Starting Combined RAG Service...")
     
-    # Initialize MCQ RAG
+    # Initialize MCQ RAG generator (don't build vector store yet)
     try:
         mcq_data_dir = os.getenv("MCQ_DATA_DIR", "/app/data/MCQ")
         mcq_generator = RAGQuizGenerator(
             data_dir=mcq_data_dir,
             persist_directory="/app/chroma_db/mcq"
         )
-        mcq_generator.build_vector_store()
-        print("✅ MCQ RAG initialized")
+        print("✅ MCQ RAG generator created (vector store will load on first use)")
     except Exception as e:
         print(f"❌ MCQ RAG initialization failed: {e}")
     
-    # Initialize Theory RAG
+    # Initialize Theory RAG generator (don't build vector store yet)
     try:
         theory_data_dir = os.getenv("THEORY_DATA_DIR", "/app/data/Theory")
         theory_generator = RAGTheoryGenerator(
             data_dir=theory_data_dir,
             persist_directory="/app/chroma_db/theory"
         )
-        theory_generator.build_vector_store()
-        print("✅ Theory RAG initialized")
+        print("✅ Theory RAG generator created (vector store will load on first use)")
     except Exception as e:
         print(f"❌ Theory RAG initialization failed: {e}")
 
@@ -105,6 +103,11 @@ async def retrieve_context(request: RetrievalRequest):
         if not mcq_generator:
             raise HTTPException(503, "MCQ RAG not initialized")
         
+        # Ensure vector store is built (lazy loading)
+        if not mcq_generator.vectorstore:
+            print("⏳ Building MCQ vector store on first use...")
+            mcq_generator.build_vector_store()
+        
         try:
             docs = mcq_generator.retrieve_similar_questions(
                 subject=request.subject,
@@ -124,6 +127,11 @@ async def retrieve_context(request: RetrievalRequest):
     if request.retrieval_type in ["theory", "both"]:
         if not theory_generator:
             raise HTTPException(503, "Theory RAG not initialized")
+        
+        # Ensure vector store is built (lazy loading)
+        if not theory_generator.vectorstore:
+            print("⏳ Building Theory vector store on first use...")
+            theory_generator.build_vector_store()
         
         try:
             theory_docs = theory_generator.retrieve_relevant_theory(
@@ -199,6 +207,61 @@ async def rebuild_vectorstores():
             results["theory"] = f"failed: {e}"
     
     return results
+
+
+class AddQuestionsRequest(BaseModel):
+    """Request to add generated questions to vector store"""
+    questions: List[Dict[str, Any]]
+    subject: str
+    topic: str
+
+
+@app.post("/add-questions")
+async def add_questions(request: AddQuestionsRequest):
+    """
+    Add generated questions to MCQ vector store for future retrieval
+    """
+    if not mcq_generator:
+        raise HTTPException(503, "MCQ RAG not initialized")
+    
+    # Ensure vector store is built
+    if not mcq_generator.vectorstore:
+        print("⏳ Building MCQ vector store before adding questions...")
+        mcq_generator.build_vector_store()
+    
+    try:
+        added_count = 0
+        for question in request.questions:
+            # Create document text from question
+            doc_text = f"Question: {question.get('question', '')}\n"
+            doc_text += f"Subject: {request.subject}\n"
+            doc_text += f"Topic: {request.topic}\n"
+            doc_text += f"Difficulty: {question.get('difficulty', 'medium')}\n"
+            doc_text += f"Options: {question.get('options', [])}\n"
+            doc_text += f"Correct Answer: {question.get('correct_answer', '')}\n"
+            if question.get('explanation'):
+                doc_text += f"Explanation: {question.get('explanation', '')}\n"
+            
+            # Add to vector store
+            mcq_generator.vectorstore.add_texts(
+                texts=[doc_text],
+                metadatas=[{
+                    "subject": request.subject,
+                    "topic": request.topic,
+                    "difficulty": question.get('difficulty', 'medium'),
+                    "type": "generated"
+                }]
+            )
+            added_count += 1
+        
+        return {
+            "success": True,
+            "added_count": added_count,
+            "message": f"Added {added_count} questions to vector store"
+        }
+    
+    except Exception as e:
+        raise HTTPException(500, f"Failed to add questions: {str(e)}")
 
 
 if __name__ == "__main__":

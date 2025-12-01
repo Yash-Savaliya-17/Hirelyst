@@ -498,28 +498,36 @@ export class QuizService {
             }
             
             const requestData = {
-                domain: quizQuestion.question.subject.name,
-                subdomain: quizQuestion.question.topic.name,
-                num_questions: 1,
-                difficulty: "Easy"
+                subject: quizQuestion.question.subject.name,
+                topic: quizQuestion.question.topic.name,
+                subtopic: null,
+                difficulty: "medium",
+                count: 1,
+                use_retrieval: true  // Use RAG (vector stores already loaded, fast)
             };
             
             this.logger.debug(`Regenerating quiz question: quizQuestionId=${quizQuestionId}, user=${user.email}`);
             this.logger.debug(`Request payload: ${JSON.stringify(requestData)}`);
             
-            const apiUrl = this.config.get("QUIZ_GEN_SERVER") + "/api/generate-quiz";
-            const quizGenResp = await axios.post(apiUrl, requestData, {
+            // Use orchestrator with stored context or RAG
+            const orchestratorUrl = this.config.get("ORCHESTRATOR_SERVICE_URL") || "http://localhost:3003";
+            const quizGenResp = await axios.post(`${orchestratorUrl}/generate-quiz`, requestData, {
                 headers: {"Content-Type": "application/json"},
+                timeout: 30000
             });
 
-            if (!quizGenResp?.data?.quiz?.length) {
+            if (!quizGenResp?.data?.questions?.length) {
                 throw new Error("No quiz data received for regeneration");
             }
 
-            const q = quizGenResp.data.quiz[0];
-            if (!this.isValidQuestionData(q)) {
+            const q = quizGenResp.data.questions[0];
+            if (!q || !q.question) {
                 throw new Error("Invalid question data received");
             }
+
+            // Map orchestrator response to database format
+            const correctAnswerIndex = q.correct_option_index || 0;
+            const correctAnswer = q.options?.[correctAnswerIndex] || q.options?.[0];
 
             const newQuestion = await this.prisma.quizQuestion.create({
                 data: {
@@ -531,16 +539,16 @@ export class QuizService {
                     question: {
                         create: {
                             question: q.question,
-                            answer: q.correct_answer,
-                            difficulty: "EASY",
+                            answer: correctAnswer,
+                            difficulty: q.difficulty?.toUpperCase() || "MEDIUM",
                             subjectId: quizQuestion.question.subject.sys_id,
                             topicId: quizQuestion.question.topic.sys_id,
                             createdById: user.sys_id,
                             options: {
-                                create: Object.entries(q.options).map(([key, value]) => ({
-                                    option: value.toString(),
-                                    isCorrect: q.correct_answer === key,
-                                })),
+                                create: q.options?.map((opt, idx) => ({
+                                    option: opt,
+                                    isCorrect: idx === correctAnswerIndex,
+                                })) || [],
                             },
                         },
                     },
@@ -605,10 +613,10 @@ export class QuizService {
                 timeout: 45000 // 45 second timeout (longer for dual RAG)
             });
 
-            this.logger.log(`📥 Orchestrator Response status: ${orchestratorResp.status}`);
-            this.logger.log(`📄 Orchestrator Response:`, JSON.stringify(orchestratorResp.data, null, 2));
+        this.logger.log(`📥 Orchestrator Response status: ${orchestratorResp.status}`);
+        this.logger.log(`📄 Orchestrator Response:`, JSON.stringify(orchestratorResp.data, null, 2));
 
-            if (orchestratorResp?.data?.success && orchestratorResp?.data?.questions?.length) {
+        if (orchestratorResp?.data?.success && orchestratorResp?.data?.questions?.length) {
                 // Transform orchestrator response to match expected format
                 const transformedQuestions = orchestratorResp.data.questions.map(q => ({
                     question: q.question,
@@ -768,15 +776,19 @@ export class QuizService {
             
             const response = await axios.post(
                 `${ragApiUrl}/add-questions`,
-                formattedQuestions,
+                {
+                    questions: formattedQuestions,
+                    subject: subject.name,
+                    topic: topic.name
+                },
                 {
                     headers: {"Content-Type": "application/json"},
-                    timeout: 10000
+                    timeout: 60000 // 60 seconds - first time vector store build takes time
                 }
             );
 
             if (response.data?.success) {
-                this.logger.log(`✅ Added ${response.data.count} questions to vector store`);
+                this.logger.log(`✅ Added ${response.data.added_count || formattedQuestions.length} questions to vector store`);
             }
         } catch (error) {
             // Don't fail the whole operation if vector store update fails

@@ -12,13 +12,14 @@ from pathlib import Path
 
 
 class RAGQuizGenerator:
-    def __init__(self, data_dir: str, collection_name: str = "mcq_questions"):
+    def __init__(self, data_dir: str, collection_name: str = "mcq_questions", persist_directory: str = "./chroma_db"):
         """
         Initialize RAG Quiz Generator
         
         Args:
             data_dir: Directory containing MCQ JSON files
             collection_name: Name for ChromaDB collection
+            persist_directory: Directory for ChromaDB persistence
         """
         self.data_dir = Path(data_dir)
         self.collection_name = collection_name
@@ -34,13 +35,15 @@ class RAGQuizGenerator:
         )
         
         # Initialize vector store
-        self.persist_directory = "./chroma_db"
+        self.persist_directory = persist_directory
         self.vectorstore = None
         self.retriever = None
+        self.all_questions = []
         
     def load_and_index_data(self):
         """Load MCQ data from JSON files and create vector store"""
         documents = []
+        self.all_questions = []
         
         # Load all JSON files from data directory
         for json_file in self.data_dir.glob("*.json"):
@@ -50,6 +53,7 @@ class RAGQuizGenerator:
                     
                     # Handle both array and object structures
                     questions = data if isinstance(data, list) else data.get('questions', [])
+                    self.all_questions.extend(questions)
                     
                     for item in questions:
                         # Create document text from question
@@ -116,6 +120,21 @@ class RAGQuizGenerator:
         docs = self.retriever.get_relevant_documents(query)
         
         return [doc.page_content for doc in docs[:k]]
+    
+    def build_vector_store(self, force_rebuild: bool = False):
+        """Build or load vector store"""
+        if not force_rebuild and self.vectorstore:
+            print("Vector store already initialized")
+            return
+        
+        self.load_and_index_data()
+        print(f"✅ Vector store built with {len(self.all_questions)} questions")
+    
+    def retrieve_similar_questions(self, subject: str = None, topic: str = None, difficulty: str = None, k: int = 5):
+        """Retrieve similar questions (alias for retrieve_context)"""
+        return self.retriever.get_relevant_documents(
+            f"Subject: {subject or ''} Topic: {topic or ''} Difficulty: {difficulty or ''}"
+        ) if self.retriever else []
     
     def get_stats(self):
         """Get statistics about indexed data"""

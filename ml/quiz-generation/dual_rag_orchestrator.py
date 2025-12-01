@@ -227,7 +227,6 @@ class DualRAGOrchestrator:
         if theory_available and mcq_available:
             guidance_lines.append("Blend theory depth with stylistic patterns from examples for balanced rigor.")
         guidance_lines.append("Never copy any example text verbatim.")
-        guidance_lines.append("Ensure each explanation justifies why the correct option is right AND why others are wrong succinctly.")
 
         guidance_block = "\n- " + "\n- ".join(guidance_lines)
 
@@ -260,7 +259,6 @@ Return ONLY a JSON array (no prose, no markdown) where each element matches this
   "question": "Clear standalone question ending with ?",
   "options": ["Option A","Option B","Option C","Option D"],
   "correct_option_index": <number 0-3>,
-  "explanation": "1-3 sentence justification",
   "subject": "{subject}",
   "topic": "{topic}",
   "difficulty": "{difficulty}" 
@@ -378,7 +376,7 @@ Generate now."""
     
     def _validate_question(self, question: Dict[str, Any]) -> bool:
         """Validate MCQ format"""
-        required_fields = ["question", "options", "correct_option_index", "explanation"]
+        required_fields = ["question", "options", "correct_option_index"]
         
         for field in required_fields:
             if field not in question:
