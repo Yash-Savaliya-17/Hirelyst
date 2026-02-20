@@ -1,29 +1,13 @@
 import {useCallback, useEffect, useRef, useState} from 'react';
 import {Button} from '@/components/Common/shadcnui/button';
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/Common/shadcnui/select";
-import {PutObjectCommand, S3Client} from '@aws-sdk/client-s3';
 import {v4 as uuidv4} from 'uuid';
 import {getDomains, startAnalysisApi, startInterview as startInterviewApi, submitResponse} from '@/services/operations/InterviewOperations';
 import {Alert, AlertDescription, AlertTitle} from '@/components/Common/shadcnui/alert';
 import {useNavigate} from "react-router-dom";
+import axios from 'axios';
 
-// MinIO/S3 Configuration
-const USE_MINIO = import.meta.env.VITE_USE_MINIO === 'true';
-const S3_BUCKET_NAME = USE_MINIO 
-    ? import.meta.env.VITE_MINIO_BUCKET_NAME || 'preparc'
-    : import.meta.env.VITE_PUBLIC_S3_BUCKET_NAME;
-const S3_REGION = USE_MINIO 
-    ? import.meta.env.VITE_MINIO_REGION || 'us-east-1'
-    : import.meta.env.VITE_PUBLIC_S3_REGION;
-const S3_ACCESS_KEY_ID = USE_MINIO 
-    ? import.meta.env.VITE_MINIO_ACCESS_KEY || 'minioadmin'
-    : import.meta.env.VITE_PUBLIC_S3_ACCESS_KEY_ID;
-const S3_SECRET_ACCESS_KEY = USE_MINIO 
-    ? import.meta.env.VITE_MINIO_SECRET_KEY || 'minioadmin123'
-    : import.meta.env.VITE_PUBLIC_S3_SECRET_ACCESS_KEY;
-const S3_ENDPOINT = USE_MINIO 
-    ? import.meta.env.VITE_MINIO_ENDPOINT || 'http://localhost:9000'
-    : undefined;
+const API_BASE_URL = import.meta.env.VITE_PUBLIC_API_BASE_URL || 'http://localhost:3000';
 
 const LEVELS = ["Beginner", "Intermediate", "Advanced", "Expert"];
 
@@ -54,7 +38,6 @@ export default function WebcamRecorder() {
     const mediaRecorderRef = useRef<MediaRecorder | null>(null);
     const chunksRef = useRef<Blob[]>([]);
     const recordingStartTimeRef = useRef<number | null>(null);
-    const s3Client = useRef<S3Client | null>(null);
 
     useEffect(() => {
         getDomains().then((response) => {
@@ -73,65 +56,46 @@ export default function WebcamRecorder() {
         setCodomain(''); // Reset codomain when domain changes
     };
 
-
-    useEffect(() => {
-        if (S3_REGION && S3_ACCESS_KEY_ID && S3_SECRET_ACCESS_KEY) {
-            const clientConfig: any = {
-                region: S3_REGION,
-                credentials: {
-                    accessKeyId: S3_ACCESS_KEY_ID,
-                    secretAccessKey: S3_SECRET_ACCESS_KEY,
-                },
-            };
-
-            // Add MinIO specific configuration
-            if (USE_MINIO && S3_ENDPOINT) {
-                clientConfig.endpoint = S3_ENDPOINT;
-                clientConfig.forcePathStyle = true;
-            }
-
-            s3Client.current = new S3Client(clientConfig);
-        } else {
-            setError('S3/MinIO configuration is incomplete. Please check your environment variables.');
-        }
-    }, []);
-
     const uploadToS3 = useCallback(async (videoBlob: Blob) => {
-        if (!s3Client.current || !S3_BUCKET_NAME) {
-            setError('S3 client or bucket name is not properly configured');
-            return null;
-        }
-
         const fileName = `video-${uuidv4()}.mp4`;
 
         try {
-            const params = {
-                Bucket: S3_BUCKET_NAME,
-                Key: fileName,
-                Body: videoBlob,
-                ContentType: 'video/mp4',
-            };
+            console.log('🔄 Starting upload:', fileName);
+            
+            setUploadProgress(prev => {
+                console.log(`📊 Upload progress: ${prev.current}/${prev.total}`);
+                return prev;
+            });
 
-            setUploadProgress(prev => ({
-                ...prev,
-            }));
+            // Upload video through Backend (bypasses Azure SAS signature issues)
+            const formData = new FormData();
+            formData.append('file', videoBlob, fileName);
+            formData.append('fileName', fileName);
 
-            const command = new PutObjectCommand(params);
-            await s3Client.current.send(command);
+            const uploadResponse = await axios.post(
+                `${API_BASE_URL}/api/s3/upload`,
+                formData,
+                {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                    withCredentials: true
+                }
+            );
             
-            setUploadProgress(prev => ({
-                ...prev,
-                current: prev.current + 1
-            }));
+            setUploadProgress(prev => {
+                const updated = {
+                    ...prev,
+                    current: prev.current + 1
+                };
+                console.log(`✅ Upload complete: ${updated.current}/${updated.total}`);
+                return updated;
+            });
             
-            console.log('Uploaded successfully:', fileName);
+            console.log('✅ Uploaded successfully:', fileName, '→', uploadResponse.data.url);
             
-            // Generate correct URL based on storage type
-            const fileUrl = USE_MINIO 
-                ? `${S3_ENDPOINT}/${S3_BUCKET_NAME}/${fileName}`
-                : `https://${S3_BUCKET_NAME}.s3.${S3_REGION}.amazonaws.com/${fileName}`;
-                
-            return fileUrl;
+            // Return the storage URL from Backend
+            return uploadResponse.data.url;
         } catch (error) {
             console.error('Error uploading to storage:', error);
             setError('Failed to upload video to storage');
@@ -196,16 +160,27 @@ export default function WebcamRecorder() {
         setIsLoading(true);
         setError(null);
         try {
+            console.log(`🚀 Starting interview: ${domain} / ${codomain} / ${level} / ${count} questions`);
             const response = await startInterviewApi({ domain, codomain, level, count });
+            
+            if (!response.data || !response.data.questions || response.data.questions.length === 0) {
+                throw new Error('No questions were generated. Please try again or select different options.');
+            }
+            
             setInterviewId(response.data.interview.sys_id);
             setInterviewStatus('ongoing');
-            setQuestions(response.data.questions);
+            const allQuestions = [...response.data.questions]; // Create a copy
+            setQuestions(allQuestions);
             setUploadProgress({ current: 0, total: count });
-            setCurrentQuestion(response.data.questions.shift());
+            const firstQuestion = allQuestions[0];
+            setCurrentQuestion(firstQuestion);
+            console.log(`🎯 Starting interview with ${allQuestions.length} questions`);
             await startRecording();
-        } catch (error) {
-            console.error('Error starting interview:', error);
-            setError('Failed to start interview');
+        } catch (error: any) {
+            console.error('❌ Error starting interview:', error);
+            const errorMessage = error?.response?.data?.message || error?.message || 'Failed to start interview. Please check if the question generation service is running.';
+            setError(errorMessage);
+            setCurrentQuestion({ question: `Error generating questions: ${errorMessage}`, answer: '', sys_id: '' });
         } finally {
             setIsLoading(false);
         }
@@ -216,15 +191,23 @@ export default function WebcamRecorder() {
         setError(null);
         if (interviewId) {
             try {
-                const question = questions.shift();
-                if (question) {
-                    setCurrentQuestion(question);
+                // Find the index of current question and get next one
+                const currentIndex = questions.findIndex(q => q.sys_id === currentQuestion?.sys_id);
+                const nextIndex = currentIndex + 1;
+                
+                console.log(`📍 Current question index: ${currentIndex}, Next index: ${nextIndex}, Total: ${questions.length}`);
+                
+                if (nextIndex < questions.length) {
+                    const nextQuestion = questions[nextIndex];
+                    setCurrentQuestion(nextQuestion);
+                    console.log(`➡️ Moving to question ${nextIndex + 1}/${questions.length}`);
                     await startRecording();
                 } else {
+                    console.log(`✅ All questions answered (${uploadProgress.current}/${uploadProgress.total} uploaded)`);
                     if (uploadProgress.current === uploadProgress.total) {
                         if (interviewId) {
                             await startAnalysisApi({ interviewId });
-                            console.log('Analysis started');
+                            console.log('🔍 Analysis started');
                         }
                         setInterviewStatus('completed');
                     } else {

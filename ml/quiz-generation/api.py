@@ -65,8 +65,38 @@ async def health():
     return {
         "status": "healthy",
         "rag_service_url": orchestrator.rag_service_url,
-        "llm_model": "gemini-2.5-flash"
+        "llm_model": "meta-llama/Llama-3.3-70B-Instruct"
     }
+
+@app.get("/api/domains")
+async def get_domains():
+    """Get available domains and topics for quiz generation"""
+    return {
+        "success": True,
+        "domains": [
+            {
+                "name": "Programming",
+                "topics": ["Python", "Java", "JavaScript", "C++", "Data Structures", "Algorithms"]
+            },
+            {
+                "name": "Database",
+                "topics": ["MySQL", "PostgreSQL", "MongoDB", "Redis", "SQL"]
+            },
+            {
+                "name": "Web Development",
+                "topics": ["HTML", "CSS", "React", "Node.js", "REST API"]
+            },
+            {
+                "name": "Machine Learning",
+                "topics": ["Supervised Learning", "Neural Networks", "Deep Learning", "NLP"]
+            },
+            {
+                "name": "Cloud Computing",
+                "topics": ["AWS", "Azure", "Docker", "Kubernetes"]
+            }
+        ]
+    }
+
 
 @app.post("/generate-quiz", response_model=QuizResponse)
 async def generate_quiz(request: QuizRequest):
@@ -77,7 +107,7 @@ async def generate_quiz(request: QuizRequest):
     1. Retrieves MCQ examples from MCQ RAG service
     2. Retrieves theory context from Theory RAG service
     3. Combines both contexts
-    4. Generates questions with Gemini
+    4. Generates questions with Nebius API (Llama 3.3 70B)
     
     Args:
         request: QuizRequest with filters and parameters

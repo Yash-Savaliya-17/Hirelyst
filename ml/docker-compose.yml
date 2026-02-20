@@ -84,12 +84,17 @@ services:
 
   speech-to-text:
     build: ./speech-to-text
+    container_name: ml-speech-to-text-1
     ports:
-      - "3006:8000"
+      - "3007:3007"
     env_file:
       - ./speech-to-text/.env
-    depends_on:
-      - minio
+    environment:
+      - PORT=3007
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - /tmp/speech-to-text:/tmp/speech-to-text
+    restart: unless-stopped
 
   facial-expression:
     build: ./facial-expression

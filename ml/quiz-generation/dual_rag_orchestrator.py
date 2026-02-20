@@ -3,7 +3,7 @@ import json
 import asyncio
 from typing import List, Dict, Any, Optional
 from dotenv import load_dotenv
-import google.generativeai as genai
+from openai import OpenAI
 import aiohttp
 
 load_dotenv()
@@ -33,13 +33,16 @@ class DualRAGOrchestrator:
         """
         self.rag_service_url = rag_service_url
         
-        # Initialize Google Gemini API
-        api_key = os.getenv("GEMINI_API_KEY")
+        # Initialize Nebius API (OpenAI-compatible)
+        api_key = os.getenv("NEBIUS_API_KEY")
         if not api_key:
-            raise ValueError("GEMINI_API_KEY not found in environment variables")
+            raise ValueError("NEBIUS_API_KEY not found in environment variables")
         
-        genai.configure(api_key=api_key)
-        self.llm = genai.GenerativeModel('gemini-2.5-flash')
+        self.llm = OpenAI(
+            api_key=api_key,
+            base_url="https://api.tokenfactory.nebius.com/v1/"
+        )
+        self.model = "meta-llama/Llama-3.3-70B-Instruct"
     
     async def retrieve_mcq_examples(
         self,
@@ -342,12 +345,20 @@ Generate now."""
             theory_context=theory_context
         )
         
-        # Step 3: Generate with Gemini
-        print("🤖 Generating questions with Gemini...")
+        # Step 3: Generate with Nebius API (Llama 3.3 70B)
+        print("🤖 Generating questions with Nebius API...")
         
         try:
-            response = self.llm.generate_content(prompt)
-            response_text = response.text
+            response = self.llm.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "system", "content": "You are an expert quiz generator. Generate valid JSON arrays of multiple-choice questions."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.9,
+                max_tokens=4096
+            )
+            response_text = response.choices[0].message.content
             
             # Extract JSON
             json_start = response_text.find('[')
@@ -367,7 +378,7 @@ Generate now."""
                 print(f"{'='*80}\n")
                 return valid_questions
             else:
-                print("⚠️ No valid JSON found in Gemini response")
+                print("⚠️ No valid JSON found in API response")
                 return []
         
         except Exception as e:

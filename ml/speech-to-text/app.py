@@ -1,14 +1,14 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-import boto3
 import os
 import logging
-from urllib.parse import urlparse
-from deepgram import Deepgram
+import tempfile
+import azure.cognitiveservices.speech as speechsdk
+from azure.storage.blob import BlobServiceClient
 from moviepy.editor import VideoFileClip
-from botocore.exceptions import ClientError
-import ffmpeg
 from dotenv import load_dotenv
+import json
+import time
 
 load_dotenv()
 
@@ -19,141 +19,264 @@ logger = logging.getLogger(__name__)
 # FastAPI App
 app = FastAPI()
 
-# Storage configuration (MinIO or AWS S3)
-USE_MINIO = os.getenv('USE_MINIO', 'true').lower() == 'true'
-DEEPGRAM_API_KEY = os.getenv('DEEPGRAM_API_KEY')
+# Azure Speech Configuration
+AZURE_SPEECH_KEY = os.getenv('AZURE_SPEECH_KEY')
+AZURE_SPEECH_REGION = os.getenv('AZURE_SPEECH_REGION', 'centralindia')
 
-if USE_MINIO:
-    # MinIO configuration
-    MINIO_ENDPOINT = os.getenv('MINIO_ENDPOINT', 'http://minio:9000')
-    MINIO_ACCESS_KEY = os.getenv('MINIO_ACCESS_KEY', 'minioadmin')
-    MINIO_SECRET_KEY = os.getenv('MINIO_SECRET_KEY', 'minioadmin123')
-    MINIO_REGION = os.getenv('MINIO_REGION', 'us-east-1')
+# Azure Blob Storage Configuration
+AZURE_STORAGE_CONNECTION_STRING = os.getenv('AZURE_STORAGE_CONNECTION_STRING')
+AZURE_CONTAINER_NAME = os.getenv('AZURE_CONTAINER_NAME', 'preparc')
+
+# Validate environment variables
+if not AZURE_SPEECH_KEY:
+    logger.error("❌ AZURE_SPEECH_KEY not found in environment variables")
+    raise ValueError("AZURE_SPEECH_KEY is required")
     
-    s3 = boto3.client('s3',
-                      endpoint_url=MINIO_ENDPOINT,
-                      aws_access_key_id=MINIO_ACCESS_KEY,
-                      aws_secret_access_key=MINIO_SECRET_KEY,
-                      region_name=MINIO_REGION,
-                      aws_session_token=None,
-                      verify=False)
-else:
-    # AWS S3 configuration
-    AWS_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY')
-    AWS_SECRET_KEY = os.getenv('AWS_SECRET_KEY')
-    AWS_REGION = os.getenv('AWS_REGION')
-    
-    s3 = boto3.client('s3',
-                      aws_access_key_id=AWS_ACCESS_KEY,
-                      aws_secret_access_key=AWS_SECRET_KEY,
-                      region_name=AWS_REGION)
+if not AZURE_STORAGE_CONNECTION_STRING:
+    logger.error("❌ AZURE_STORAGE_CONNECTION_STRING not found in environment variables")
+    raise ValueError("AZURE_STORAGE_CONNECTION_STRING is required")
 
-print(f"Using {'MinIO' if USE_MINIO else 'AWS S3'} for storage")
+logger.info(f"✅ Azure Speech configured for region: {AZURE_SPEECH_REGION}")
+logger.info(f"✅ Azure Blob Storage container: {AZURE_CONTAINER_NAME}")
 
 
+# Request/Response Models
 class BodyInput(BaseModel):
     s3_url: str
 
 
-@app.post("/transcribe-s3-video/")
+class TranscriptionResponse(BaseModel):
+    recognized_speech: str
+    confidence: float
+    duration: float
+
+
+def download_video_from_azure(video_url: str, local_path: str):
+    """Download video from Azure Blob Storage"""
+    try:
+        logger.info(f"📥 Downloading video from: {video_url}")
+        
+        # Extract blob name from URL
+        # Example: https://preparcblob.blob.core.windows.net/preparc/video-123.mp4
+        blob_name = video_url.split(f"/{AZURE_CONTAINER_NAME}/")[-1]
+        
+        blob_service_client = BlobServiceClient.from_connection_string(
+            AZURE_STORAGE_CONNECTION_STRING
+        )
+        blob_client = blob_service_client.get_blob_client(
+            container=AZURE_CONTAINER_NAME,
+            blob=blob_name
+        )
+        
+        with open(local_path, "wb") as download_file:
+            download_file.write(blob_client.download_blob().readall())
+        
+        logger.info(f"✅ Video downloaded successfully: {local_path}")
+        return True
+    except Exception as e:
+        logger.error(f"❌ Failed to download video: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Video download failed: {str(e)}")
+
+
+def extract_audio_from_video(video_path: str, audio_path: str):
+    """Extract audio from video file"""
+    try:
+        logger.info(f"🎵 Extracting audio from video: {video_path}")
+        video_clip = VideoFileClip(video_path)
+        audio_clip = video_clip.audio
+        audio_clip.write_audiofile(audio_path, logger=None)
+        audio_clip.close()
+        video_clip.close()
+        logger.info(f"✅ Audio extracted: {audio_path}")
+        return True
+    except Exception as e:
+        logger.error(f"❌ Audio extraction failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Audio extraction failed: {str(e)}")
+
+
+def transcribe_audio_with_azure(audio_path: str):
+    """Transcribe audio using Azure Speech-to-Text"""
+    try:
+        logger.info(f"🎤 Transcribing audio with Azure Speech: {audio_path}")
+        
+        # Configure Azure Speech
+        speech_config = speechsdk.SpeechConfig(
+            subscription=AZURE_SPEECH_KEY,
+            region=AZURE_SPEECH_REGION
+        )
+        speech_config.speech_recognition_language = "en-US"
+        speech_config.output_format = speechsdk.OutputFormat.Detailed
+        
+        # Create audio config from file
+        audio_config = speechsdk.AudioConfig(filename=audio_path)
+        
+        # Create speech recognizer
+        speech_recognizer = speechsdk.SpeechRecognizer(
+            speech_config=speech_config,
+            audio_config=audio_config
+        )
+        
+        # Perform continuous recognition
+        transcription = []
+        confidences = []
+        done = False
+        
+        def recognized_cb(evt):
+            if evt.result.reason == speechsdk.ResultReason.RecognizedSpeech:
+                transcription.append(evt.result.text)
+                try:
+                    if hasattr(evt.result, 'properties'):
+                        conf = evt.result.properties.get(
+                            speechsdk.PropertyId.SpeechServiceResponse_JsonResult
+                        )
+                        if conf:
+                            conf_data = json.loads(conf)
+                            if 'NBest' in conf_data and len(conf_data['NBest']) > 0:
+                                confidences.append(conf_data['NBest'][0].get('Confidence', 0.95))
+                            else:
+                                confidences.append(0.95)
+                        else:
+                            confidences.append(0.95)
+                    else:
+                        confidences.append(0.95)
+                except:
+                    confidences.append(0.95)
+                logger.info(f"📝 Recognized: {evt.result.text}")
+            elif evt.result.reason == speechsdk.ResultReason.NoMatch:
+                logger.warning("⚠️ No speech could be recognized")
+        
+        def stop_cb(evt):
+            nonlocal done
+            done = True
+            logger.info("🛑 Recognition stopped")
+        
+        def canceled_cb(evt):
+            nonlocal done
+            logger.error(f"❌ Recognition canceled: {evt.cancellation_details.reason}")
+            if evt.cancellation_details.reason == speechsdk.CancellationReason.Error:
+                logger.error(f"Error details: {evt.cancellation_details.error_details}")
+            done = True
+        
+        # Connect callbacks
+        speech_recognizer.recognized.connect(recognized_cb)
+        speech_recognizer.session_stopped.connect(stop_cb)
+        speech_recognizer.canceled.connect(canceled_cb)
+        
+        # Start continuous recognition
+        speech_recognizer.start_continuous_recognition()
+        
+        # Wait for completion
+        timeout = 300  # 5 minutes max
+        elapsed = 0
+        while not done and elapsed < timeout:
+            time.sleep(0.5)
+            elapsed += 0.5
+        
+        speech_recognizer.stop_continuous_recognition()
+        
+        # Combine all recognized text
+        full_text = " ".join(transcription)
+        avg_confidence = sum(confidences) / len(confidences) if confidences else 0.0
+        
+        if not full_text:
+            logger.warning("⚠️ No speech detected in audio")
+            return {
+                "text": "No speech detected in the audio. Please ensure your microphone is working and speak clearly.",
+                "confidence": 0.0
+            }
+        
+        logger.info(f"✅ Transcription complete: {len(full_text)} characters, confidence: {avg_confidence:.2f}")
+        return {
+            "text": full_text,
+            "confidence": avg_confidence
+        }
+        
+    except Exception as e:
+        logger.error(f"❌ Transcription failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Transcription failed: {str(e)}")
+
+
+@app.get("/health")
+async def health_check():
+    """Health check endpoint"""
+    return {
+        "status": "healthy",
+        "service": "speech-to-text",
+        "provider": "Azure Cognitive Services",
+        "region": AZURE_SPEECH_REGION,
+        "container": AZURE_CONTAINER_NAME
+    }
+
+
+@app.post("/transcribe", response_model=TranscriptionResponse)
 async def transcribe_s3_video(data: BodyInput):
+    """
+    Transcribe speech from video URL
+    
+    Args:
+        data: Contains s3_url (Azure Blob Storage URL)
+    
+    Returns:
+        Transcribed text with confidence score and duration
+    """
+    video_path = None
+    audio_path = None
+    
     try:
-        # Parse the S3 URL
-        s3_url = data.s3_url
-        parsed_url = urlparse(s3_url)
+        logger.info(f"🎬 Starting transcription for: {data.s3_url}")
         
-        # For MinIO URLs like http://localhost:9000/bucket/key
-        # Extract bucket and key from the path
-        path_parts = parsed_url.path.lstrip('/').split('/', 1)
-        bucket_name = path_parts[0]
-        key = path_parts[1] if len(path_parts) > 1 else ''
+        # Create temporary files
+        with tempfile.NamedTemporaryFile(suffix=".mp4", delete=False) as video_file:
+            video_path = video_file.name
         
-        logger.info(f"Parsed S3 URL: bucket={bucket_name}, key={key}")
-
-        # Set up file paths
-        filename = os.path.basename(key)
-        base_filename, _ = os.path.splitext(filename)
-        video_path = f'./{filename}'
-        audio_path = f'./{base_filename}.wav'
-
-        # Download video from S3
-        logger.info(f"Downloading video from S3: {bucket_name}/{key}")
-        s3.download_file(bucket_name, key, video_path)
-        logger.info(f"Video downloaded successfully: {video_path}")
-
-        # Extract audio from the video file
-        logger.info("Extracting audio from video")
-        try:
-            video_clip = VideoFileClip(video_path)
-            audio_clip = video_clip.audio
-            audio_clip.write_audiofile(audio_path)
-            audio_clip.close()
-            video_clip.close()
-            logger.info(f"Audio extracted successfully using MoviePy: {audio_path}")
-        except Exception as e:
-            logger.warning(f"MoviePy failed to extract audio, trying ffmpeg: {str(e)}")
+        with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as audio_file:
+            audio_path = audio_file.name
+        
+        # Step 1: Download video from Azure Blob Storage
+        download_video_from_azure(data.s3_url, video_path)
+        
+        # Step 2: Extract audio from video
+        extract_audio_from_video(video_path, audio_path)
+        
+        # Step 3: Transcribe audio with Azure Speech
+        result = transcribe_audio_with_azure(audio_path)
+        
+        # Get audio duration
+        video = VideoFileClip(video_path)
+        duration = video.duration
+        video.close()
+        
+        logger.info(f"✅ Transcription successful: {len(result['text'])} chars, {duration}s duration")
+        
+        return TranscriptionResponse(
+            recognized_speech=result["text"],
+            confidence=result["confidence"],
+            duration=duration
+        )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"❌ Unexpected error: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+    
+    finally:
+        # Cleanup temporary files
+        if video_path and os.path.exists(video_path):
             try:
-                ffmpeg.input(video_path).output(audio_path, acodec='pcm_s16le', ac=1, ar='16k').overwrite_output().run()
-            except ffmpeg.Error as e:
-                logger.error(f"ffmpeg failed to extract audio: {e.stderr.decode()}")
-                raise
-
-        if not os.path.exists(audio_path) or os.path.getsize(audio_path) == 0:
-            logger.error(f"Audio file is missing or empty: {audio_path}")
-            raise Exception(f"Audio file is missing or empty: {audio_path}")
-
-        # Transcribe audio using Deepgram
-        transcription = await transcribe_with_deepgram(audio_path)
-
-        # Clean up files
-        os.remove(video_path)
-        os.remove(audio_path)
-
-        logger.info("Transcription completed successfully")
-        return {"recognized_speech": transcription.strip()}
-
-    except ClientError as e:
-        logger.error(f"Error accessing S3: {str(e)}")
-        raise HTTPException(status_code=404, detail=f"Error accessing S3: {str(e)}")
-    except Exception as e:
-        logger.error(f"An error occurred: {str(e)}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
+                os.remove(video_path)
+                logger.info(f"🗑️ Cleaned up video file: {video_path}")
+            except:
+                pass
+        if audio_path and os.path.exists(audio_path):
+            try:
+                os.remove(audio_path)
+                logger.info(f"🗑️ Cleaned up audio file: {audio_path}")
+            except:
+                pass
 
 
-async def transcribe_with_deepgram(audio_path: str) -> str:
-    import asyncio
-    
-    dg_client = Deepgram(DEEPGRAM_API_KEY)
-    
-    try:
-        with open(audio_path, 'rb') as audio_file:
-            source = {'buffer': audio_file, 'mimetype': 'audio/wav'}
-            logger.info("Sending audio to Deepgram...")
-            
-            response = await dg_client.transcription.prerecorded(
-                source,
-                {
-                    'punctuate': True,
-                    'model': 'nova-2',
-                    'language': 'en-US'
-                }
-            )
-
-            # Try to get transcript from channels (standard response)
-            if response.get('results', {}).get('channels', [{}])[0].get('alternatives', [{}])[0].get('transcript'):
-                transcription = response['results']['channels'][0]['alternatives'][0]['transcript']
-                logger.info("Transcription successful:")
-                logger.info(transcription)
-                return transcription
-            else:
-                logger.warning("No transcript found in response.")
-                return ""
-                    
-    except Exception as e:
-        logger.error(f"Transcription failed: {e}")
-        raise Exception(f"Transcription failed: {e}")
-
-
-# if __name__ == "__main__":
-#     import uvicorn
-#     uvicorn.run(app, host="0.0.0.0", port=8002)
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.getenv("PORT", 3003))
+    uvicorn.run(app, host="0.0.0.0", port=port)

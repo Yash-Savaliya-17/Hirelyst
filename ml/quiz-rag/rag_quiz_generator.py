@@ -2,13 +2,33 @@
 RAG Quiz Generator for MCQ questions
 """
 import os
-from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
+import shutil
 from langchain_community.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
+from langchain.embeddings.base import Embeddings
+from sentence_transformers import SentenceTransformer
 import json
 from pathlib import Path
+from typing import List
+
+
+class SentenceTransformerEmbeddings(Embeddings):
+    """Custom embeddings using Sentence Transformers"""
+    
+    def __init__(self, model_name: str = "all-MiniLM-L6-v2"):
+        self.model = SentenceTransformer(model_name)
+    
+    def embed_documents(self, texts: List[str]) -> List[List[float]]:
+        """Embed a list of documents"""
+        embeddings = self.model.encode(texts, convert_to_tensor=False)
+        return embeddings.tolist()
+    
+    def embed_query(self, text: str) -> List[float]:
+        """Embed a single query"""
+        embedding = self.model.encode([text], convert_to_tensor=False)
+        return embedding[0].tolist()
 
 
 class RAGQuizGenerator:
@@ -23,22 +43,41 @@ class RAGQuizGenerator:
         """
         self.data_dir = Path(data_dir)
         self.collection_name = collection_name
-        self.gemini_api_key = os.getenv("GEMINI_API_KEY")
         
-        if not self.gemini_api_key:
-            raise ValueError("GEMINI_API_KEY environment variable not set")
-        
-        # Initialize embeddings
-        self.embeddings = GoogleGenerativeAIEmbeddings(
-            model="models/text-embedding-004",
-            google_api_key=self.gemini_api_key
-        )
+        # Initialize Sentence Transformer embeddings (free, local)
+        print("🔄 Loading Sentence Transformer model...")
+        embedding_model = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
+        self.embeddings = SentenceTransformerEmbeddings(model_name=embedding_model)
+        print(f"✅ Loaded embedding model: {embedding_model}")
         
         # Initialize vector store
         self.persist_directory = persist_directory
         self.vectorstore = None
         self.retriever = None
         self.all_questions = []
+
+    def _has_persisted_data(self) -> bool:
+        persist_path = Path(self.persist_directory)
+        return persist_path.exists() and any(persist_path.rglob("*"))
+
+    def _load_existing_vector_store(self) -> bool:
+        try:
+            self.vectorstore = Chroma(
+                collection_name=self.collection_name,
+                embedding_function=self.embeddings,
+                persist_directory=self.persist_directory
+            )
+            self.retriever = self.vectorstore.as_retriever(search_kwargs={"k": 5})
+            count = self.vectorstore._collection.count()
+            if count > 0:
+                print(f"✅ Loaded existing MCQ vector store with {count} entries")
+                return True
+            return False
+        except Exception as e:
+            print(f"⚠️ Could not load existing MCQ vector store: {e}")
+            self.vectorstore = None
+            self.retriever = None
+            return False
         
     def load_and_index_data(self):
         """Load MCQ data from JSON files and create vector store"""
@@ -125,6 +164,14 @@ class RAGQuizGenerator:
         """Build or load vector store"""
         if not force_rebuild and self.vectorstore:
             print("Vector store already initialized")
+            return
+
+        if force_rebuild:
+            persist_path = Path(self.persist_directory)
+            if persist_path.exists():
+                shutil.rmtree(persist_path, ignore_errors=True)
+
+        if not force_rebuild and self._has_persisted_data() and self._load_existing_vector_store():
             return
         
         self.load_and_index_data()

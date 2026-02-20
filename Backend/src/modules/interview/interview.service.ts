@@ -19,20 +19,58 @@ export class InterviewService {
     }
 
     async start(user: User, data: StartInterviewDto): Promise<any> {
-        const interview = await this.interviewRepository.createInterview({
-            createdBy: {connect: {sys_id: user.sys_id}},
-            domain: data.domain,
-            codomain: data.codomain,
-        })
-        const response = await axios.post(`${process.env.QUE_GEN_SERVER}/generate`, data);
-        const questions = response.data;
-        for (const question of questions) {
-            const dbQue = await this.interviewRepository.createQuestion({
-                question: question.question, interview: {connect: {sys_id: interview.sys_id}}, answer: question.answer
+        try {
+            console.log(`🎬 Starting interview: domain=${data.domain}, codomain=${data.codomain}, level=${data.level}, count=${data.count}`);
+            
+            const interview = await this.interviewRepository.createInterview({
+                createdBy: {connect: {sys_id: user.sys_id}},
+                domain: data.domain,
+                codomain: data.codomain,
+            })
+            
+            console.log(`📡 Calling question generation service: ${process.env.QUE_GEN_SERVER}/generate`);
+            console.log(`📦 Request payload:`, JSON.stringify(data));
+            
+            const response = await axios.post(`${process.env.QUE_GEN_SERVER}/generate`, data, {
+                timeout: 60000, // 60 second timeout
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             });
-            question.sys_id = dbQue.sys_id;
+            
+            const questions = response.data;
+            
+            console.log(`✅ Received ${questions.length} questions from ML service (expected: ${data.count})`);
+            
+            if (!questions || questions.length === 0) {
+                throw new Error(`No questions generated. ML service returned empty response.`);
+            }
+            
+            for (const question of questions) {
+                const dbQue = await this.interviewRepository.createQuestion({
+                    question: question.question, 
+                    interview: {connect: {sys_id: interview.sys_id}}, 
+                    answer: question.answer
+                });
+                question.sys_id = dbQue.sys_id;
+            }
+            
+            console.log(`💾 Saved ${questions.length} questions to database`);
+            return {message: "Interview started successfully", interview, questions};
+            
+        } catch (error) {
+            console.error(`❌ Error in interview start:`, error);
+            
+            if (error.code === 'ECONNREFUSED') {
+                throw new Error(`Question generation service is not running on ${process.env.QUE_GEN_SERVER}`);
+            } else if (error.response?.data?.error) {
+                throw new Error(`Question generation failed: ${error.response.data.error}`);
+            } else if (error.message) {
+                throw new Error(error.message);
+            } else {
+                throw new Error('Failed to generate interview questions. Please try again.');
+            }
         }
-        return {message: "Interview started successfully", interview, questions};
     }
 
     async submitResponse(interviewId: number, questionId: number, s3Url: string) {

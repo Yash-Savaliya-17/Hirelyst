@@ -1,0 +1,38 @@
+﻿===========================
+AIzaSyABqkaArP4nlUyKFYIOCALspM-pbyx89lk
+===========================
+got the request
+docker : [2026-01-08 08:34:50 +0000] [8] [INFO] Running on http://0.0.0.0:8000 (CTRL 
++ C to quit)
+At line:1 char:1
++ docker logs ml-interview-question-1 2>&1 | Out-File -FilePath D:\Inte ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([2026-01-08 08:...RL + C to quit):Strin 
+   g) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+≡ƒÄ» Generating 1 questions for Database - SQL (Beginner)
+≡ƒôñ Sending prompt to Gemini (requesting 1 questions)...
+[2026-01-08 08:35:09 +0000] [8] [INFO] 172.19.0.1:43704 - - [08/Jan/2026:08:35:09 +0000] "POST /api/generate 1.1" - - "-" "curl/8.13.0"
+≡ƒôÑ Received response from Gemini (length: 1726 chars)
+≡ƒöì Parsing response text (length: 1726)...
+Full response: 1. Question: You've just started a new role as a Junior Data Analyst. Your first task is to investigate a reported issue where some customer orders seem to be missing from a daily report. You've been granted access to a database containing `Customers` and `Orders` tables, but you have no prior knowledge of their structure, data types, or relationships. Before you even think about writing a complex query to find the 'missing' orders, walk me through your systematic approach and the very first *SQL-driven investigative steps* you would take to simply understand these two tables, their contents, and how they might relate. What specific SQL commands would you use, and *why* would you use them in that sequence, considering best practices for a beginner exploring an unknown dataset?
+
+Answer:
+This is a very common and critical real-world scenario. My approach would be systematic, starting with understanding the foundational structure before diving into the data itself. The goal is to build a mental model of the data to ensure I'm asking the right questions and writing effective queries later.
+
+Here's my step-by-step SQL-driven investigation:
+
+1.  **Understand the Schema (Table Structure):**
+    *   **SQL Command:** `DESCRIBE Customers;` (or `SHOW COLUMNS FROM Customers;` or `sp_columns Customers;` depending on the SQL dialect) and `DESCRIBE Orders;`
+    *   **Why:** This is the absolute first step. Before looking at any data, I need to know what columns exist in each table, their data types (e.g., `INT`, `VARCHAR`, `DATE`, `DECIMAL`), whether they allow `NULL` values, and if any are identified as primary keys. This gives me a blueprint of the data. For instance, knowing `customer_id` is an `INT` helps me
+================================================================================
+After removing **: 1. Question: You've just started a new role as a Junior Data Analyst. Your first task is to investigate a reported issue where some customer orders seem to be missing from a daily report. You've been granted access to a database containing `Customers` and `Orders` tables, but you have no prior knowledge of their structure, data types, or relationships. Before you even think about writing a complex
+Regex found 1 matches
+Match 1 - Q length: 774, A length: 917
+  Γ£ô Parsed question 1: You've just started a new role as a Junior Data Analyst. You...
+≡ƒöì Total questions parsed: 1
+≡ƒôè Parsed 1 questions from response
+≡ƒôª Returning 1 questions (requested: 1)
+Γ£à Generated 1 questions (requested: 1)
+[2026-01-08 08:35:20 +0000] [8] [INFO] 172.19.0.1:43704 - - [08/Jan/2026:08:35:20 +0000] "POST /api/generate 1.1" 200 1727 "-" "curl/8.13.0"
