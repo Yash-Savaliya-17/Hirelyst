@@ -1,4 +1,4 @@
-# PrepArc 2
+Hirelyst
 
 An AI-powered interview preparation platform with:
 - **Frontend**: React + Vite
@@ -228,3 +228,4 @@ Reset credentials in `ml/docker-compose.yml` (`MINIO_ROOT_USER`, `MINIO_ROOT_PAS
 ## License
 
 Internal / project-specific. Add your preferred license before public release.
+
