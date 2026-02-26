@@ -1,4 +1,4 @@
-Hirelyst
+# Hirelyst
 
 An AI-powered interview preparation platform with:
 - **Frontend**: React + Vite
@@ -227,5 +227,4 @@ Reset credentials in `ml/docker-compose.yml` (`MINIO_ROOT_USER`, `MINIO_ROOT_PAS
 
 ## License
 
-Internal / project-specific. Add your preferred license before public release.
-
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
